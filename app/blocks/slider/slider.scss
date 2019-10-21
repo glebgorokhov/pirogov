@@ -1,0 +1,86 @@
+@import '../../node_modules/swiper/dist/css/swiper.css';
+
+.slider {
+  position: relative;
+
+  &__slide {
+    padding: 100px 80px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid $ui-kit-color-gray;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  &__dot {
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: border-color $ease-main, background-color $ease-main;
+    pointer-events: all;
+    cursor: pointer;
+
+    &.is-active {
+      background-color: $color-main;
+      border-color: $color-main;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid $ui-kit-color-gray;
+    transition: opacity $ease-main;
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    z-index: 1;
+
+    &:hover { opacity: .5; }
+
+    &_next {
+
+      &::before {
+        content: '→';
+      }
+    }
+
+    &_prev {
+
+      &::before {
+        content: '←';
+      }
+    }
+  }
+}

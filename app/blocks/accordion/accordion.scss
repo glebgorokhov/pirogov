@@ -1,0 +1,38 @@
+.accordion {
+  display: block;
+
+  $b: &;
+
+  &__button {
+    cursor: pointer;
+    position: relative;
+    padding-right: 28px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-width: 5px 4px 0;
+      border-style: solid;
+      border-color: $color-basic transparent transparent transparent;
+      transform-origin: center;
+      transform: translateY(-50%) rotate(0);
+      transition: transform $ease-main;
+
+      #{$b}.is-active & {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    #{$b}.is-active & {
+      display: block;
+    }
+  }
+}

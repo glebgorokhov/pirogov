@@ -1,0 +1,174 @@
+extends ../../layouts/default
+include ui-kit-mixins
+
+block head
+  - var pageTitle = projectName + ' | UI-кит'
+
+block content
+  script
+    | $(window).on('load', function () {
+    |   $('.ui-kit__section').each(function (i) {
+    |     var id = 'section' + i;
+    |     var name = $(this).find('.ui-kit__section-head h2').text();
+    |     var li = $('<li></li>');
+    |     var a = $('<a></a>');
+    |
+    |     a.attr('href', '#'+id).text(name).addClass('js-anchor');
+    |     li.append(a);
+    |
+    |     $('.ui-kit__navigation__list').append(li);
+    |     $(this).attr('id', id);
+    |   });
+    | });
+
+  +b.ui-kit
+    +e.navigation
+      +e.UL.navigation__list
+
+    //- Шапка ui-кита
+    +e.SECTION.head&attributes(attributes)
+      .container
+        +e.IMG.logo(src="assets/images/logo.svg", alt="Логотип проекта")
+        +e.name Название проекта
+
+    //- Сетка
+    +ui-section._grid
+      +ui-section-head
+        +ui-title Сетка
+        +ui-description
+          p Колонок: 12 ($grid-cols)
+          p Переменные: styles/helpers/_variables.scss
+          p Блок: blocks/grid/
+
+          +ui-special
+            p Возможные варианты использования
+            p
+              pre +col(12) аналогично +col({ xl: 12 })
+            p
+              pre +col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })
+            p Промежуточные брейкпоинты указывать не обязательно
+            p При следующей записи - блок будет занимать 6 колонок на всех разрешениях, а на самом маленьком (xs) — 12
+            p
+              pre +col({ xl: 6, xs: 12 })
+
+      +ui-section-content()
+        +grid
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(4)
+          +col(4)
+          +col(4)
+          +col(6)
+          +col(6)
+
+    //- Шрифты
+    +ui-section
+      +ui-section-head
+        +ui-title Шрифты
+        +ui-path
+          p Переменные находятся в файле styles/helpers/_variables.scss
+          p Шрифты подключены в styles/helpers/_fonts.scss
+        +ui-description
+          p Основной шрифт: Arial ($font-main), font-weight: 400, 600
+          p Дополнительный шрифт: Times New Roman ($font-second), font-weight: 400, 600
+
+    //- Цвета
+    +ui-section
+      +ui-section-head
+        +ui-title Цвета сайта
+        +ui-path Переменные находятся в файле styles/helpers/_variables.scss
+      +ui-section-content()
+        +ui-elements-list()
+          - var n = 0;
+          while n < 30
+            +ui-color._color
+            - n++
+
+    //- Градиенты
+    +ui-section
+      +ui-section-head
+          +ui-title Градиенты
+          +ui-path Миксины градиентов находятся в файле styles/helpers/_gradients.scss
+      +ui-section-content()
+        +ui-elements-list()
+          - var n = 0;
+          while n < 20
+            +ui-color._gradient
+            - n++
+
+    //- Таблицы
+    +ui-kit-table
+
+    //- Табы
+    +ui-kit-tabs
+
+    //- Попапы
+    +ui-kit-popups
+
+    //- Ссылки
+    +ui-kit-links
+
+    //- Скроллбар
+    +ui-kit-scrollbar
+
+    //- Слайдер
+    +ui-kit-slider
+
+    //- Подсказки
+    +ui-kit-tooltip
+
+    //- Карты
+    +ui-kit-map
+
+    //- Анимации
+    +ui-section
+      +ui-section-head
+        +ui-title Анимации при скролле
+        +ui-path
+          p Блок: blocks/js-functions/scrollAnimation
+        +ui-description
+          p .js-sr — общий класс для анимируемых элементов
+          p Предустановленные модификаторы для появления с разных сторон:
+          +ui-special
+            p .js-sr_top — появление сверху
+            p .js-sr_right — появление справа
+            p .js-sr_bottom — появление снизу
+            p .js-sr_left — появление слева
+
+      +ui-section-content()
+        +ui-elements-list()
+          +button().js-sr.js-sr_left .js-sr_left
+          +button().js-sr.js-sr_top .js-sr_top
+          +button().js-sr.js-sr_right .js-sr_right
+          +button().js-sr.js-sr_bottom .js-sr_bottom
+
+    //- Хлебные крошки
+    +ui-kit-breadcrumbs
+
+    //- Рейтинг
+    +ui-kit-rating
+
+    //- Блок accordion
+    +ui-kit-accordion
+
+    //- Блок button
+    +ui-kit-button
+
+    //- Блок dropdown
+    +ui-kit-dropdown
+
+    //- Блок form
+    +ui-kit-form
+
+    //- Блок content-zone
+    +ui-kit-content-zone
