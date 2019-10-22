@@ -16,6 +16,8 @@ import '../blocks/rating/rating';
 import '../blocks/dropdown/dropdown';
 import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
 
+import {preloader} from "../components/preloader/preloader";
+
 const $ = window.$;
 
 $(() => {
@@ -36,5 +38,7 @@ $(() => {
   scrollAnimation();
   accordion();
   putBlockIntoSlot();
+
+  preloader();
 });
 /* eslint-enable */

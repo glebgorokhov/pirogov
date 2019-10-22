@@ -9,30 +9,51 @@ export function slider() {
     const
       block = $(this);
 
-    const mySlider = new Swiper(block, {
-      loop: true,
-      speed: 700,
+    window.mySlider = new Swiper(block, {
+      loop: false,
+      speed: 1000,
       autoplay: {
-        delay: 2000,
+        delay: 10500,
+        disableOnInteraction: false,
+        waitForTransition: false,
       },
       slidesPerView: 1,
       spaceBetween: 0,
       centeredSlides: false,
       roundLengths: true,
       freeMode: false,
-      navigation: {
-        nextEl: block.find('.slider__button_next'),
-        prevEl: block.find('.slider__button_prev'),
+      keyboard: {
+        enabled: true,
+      },
+      mousewheel: {
+        releaseOnEdges: true,
       },
       pagination: {
-        el: block.find('.slider__dots'),
+        el: block.find('.circle-dots'),
         clickable: true,
-        bulletClass: 'slider__dot',
         bulletActiveClass: 'is-active',
+        bulletClass: 'circle-dots__circle',
+        renderBullet: function (index, className) {
+          return `
+            <div class="${className}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <circle class="js-circle-dot-percent" cx="16" cy="16" r="15" style="transition: stroke-dashoffset ${this.params.autoplay.delay}ms linear;"></circle>
+                </svg>
+                <div class="circle-dots__clickable"></div>
+            </div>
+          `;
+        },
       },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
+      on: {
+        init: function () {
+          this.slideTo(1);
+        },
+        slideChangeTransitionStart: function () {
+          $(document).find('.swiper-slide-active video')[0].currentTime = 0;
+
+          setTimeout(() => {
+            $(document).find('.swiper-slide-active video')[0].play();
+          }, 500);
         },
       },
     });

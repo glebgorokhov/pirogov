@@ -1,0 +1,14 @@
+.lottie {
+  display: block;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  z-index: 999999999999;
+  font-size: 0;
+
+  $b: &;
+
+  svg {
+    width: 14vw !important;
+  }
+}

@@ -2,41 +2,94 @@
 
 .slider {
   position: relative;
+  width: 100vw;
+  height: 100vh;
 
   &__slide {
-    padding: 100px 80px;
-    box-sizing: border-box;
-    text-align: center;
-    border: 1px solid $ui-kit-color-gray;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
-  &__dots {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
-    text-align: center;
-    pointer-events: none;
-    box-sizing: border-box;
-    z-index: 2;
+  &__video {
+    width: 70vw;
+    height: auto;
+    font-size: 0;
+    opacity: 0;
+    transition: opacity $ease-long;
+
+    @include center-block;
+
+    .swiper-slide-active & {
+      opacity: .4;
+    }
   }
 
-  &__dot {
-    margin: 5px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid $color-border;
-    border-radius: 50%;
-    display: inline-block;
+  &__video-wrapper {
+    width: 100%;
+    padding-bottom: 68%;
     position: relative;
-    transition: border-color $ease-main, background-color $ease-main;
-    pointer-events: all;
+
+    video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    z-index: 5;
+    position: relative;
+    font-size: 5vw;
+    line-height: (92/72);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     cursor: pointer;
 
-    &.is-active {
-      background-color: $color-main;
-      border-color: $color-main;
+    span {
+      display: block;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border-top: 1px solid white;
+        opacity: .5;
+        transition: transform $ease-main, opacity $ease-main;
+      }
+    }
+
+    &:hover span::after {
+      transform: translate3d(0, -0.5vw, 0);
+      opacity: 1;
+    }
+
+    span {
+      transform: translate3d(0, 5vw, 0);
+      transition: transform $ease-long, opacity $ease-long;
+      opacity: 0;
+
+      @for $i from 1 to 4 {
+        &:nth-child(#{$i}) {
+          transition-delay: #{0.1s * $i};
+        }
+      }
+    }
+
+    .js-slider.is-visible & {
+      span {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
 

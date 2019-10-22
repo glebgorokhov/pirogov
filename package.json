@@ -60,6 +60,7 @@
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "leaflet": "^1.2.0",
+    "lottie-web": "^5.5.9",
     "normalize.css": "^6.0.0",
     "nouislider": "^10.1.0",
     "object-fit-images": "^3.2.3",

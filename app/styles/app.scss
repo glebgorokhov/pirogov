@@ -9,6 +9,15 @@
 @import '../components/**/*';
 @import '../pages/**/*';
 
+html {
+  background: black;
+}
+
+body {
+  color: white;
+  font-weight: 200;
+}
+
 .container {
   width: $container-width;
   padding-left: $container-padding;

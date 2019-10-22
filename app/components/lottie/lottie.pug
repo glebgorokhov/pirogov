@@ -1,0 +1,19 @@
+mixin lottie()
+  +b.lottie#lottieLogo&attributes(attributes)
+    block
+
+mixin ui-kit-lottie()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент lottie
+      +ui-path
+        p Компонент: components/lottie/lottie
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +lottie
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -1,16 +1,18 @@
-mixin slider(pagination, buttons)
+mixin slider()
   +b.slider&attributes(attributes).swiper-container.js-slider
     .swiper-wrapper
-      block
+      each item in getData('slides')
+        +e.slide.swiper-slide
+          .container
+            +e.H2.title
+              each line in item.title
+                span!= line
 
-    if pagination
-      +e.dots
-        +e.dot
+            +e.video
+              +e.video-wrapper
+                video(src=item.video, muted, playsinline, preload="auto").js-slide-video
 
-    if buttons
-      +e.navigation
-        +e.button._prev
-        +e.button._next
+    +circle-dots
 
 mixin slide()
   +e.slide&attributes(attributes).swiper-slide

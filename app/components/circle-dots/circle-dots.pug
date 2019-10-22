@@ -1,0 +1,23 @@
+mixin circle-dots()
+  +b.circle-dots&attributes(attributes)
+    each i in [1, 2, 3, 4, 5]
+      +e.circle.is-active
+        svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32')
+          circle(cx="16" cy="16" r="15").js-circle-dot-percent
+        +e.clickable
+
+mixin ui-kit-circle-dots()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент circle-dots
+      +ui-path
+        p Компонент: components/circle-dots/circle-dots
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +circle-dots
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
