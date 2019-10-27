@@ -5,6 +5,8 @@
   width: 100vw;
   height: 100vh;
 
+  $b: &;
+
   &__slide {
     display: flex;
     align-items: center;
@@ -20,7 +22,7 @@
 
     @include center-block;
 
-    .swiper-slide-active & {
+    #{$b}.is-visible .swiper-slide-active & {
       opacity: .4;
     }
   }

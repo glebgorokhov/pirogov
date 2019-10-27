@@ -1,0 +1,58 @@
+.contacts {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+  $b: &;
+
+  &__item {
+    opacity: 0;
+    transition: opacity $ease-long, transform $ease-long;
+    transform: translate3d(0, 5vw, 0);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: (16/1440)*100vw;
+    font-weight: 700;
+    line-height: 1;
+    color: red;
+    text-align: center;
+    text-indent: 0.22vw;
+
+    span {
+      padding-bottom: (5/1440)*100vw;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: (25/1440)*100vw;
+        height: 0;
+        border-top: 1px solid $color-main;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        margin: auto;
+        transition: transform $ease-main;
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    &:hover span::after {
+      transform: translate3d(-50%, .4vw, 0);
+    }
+
+    @for $i from 1 to 7 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{0.2s * $i};
+      }
+    }
+
+    #{$b}.is-visible & {
+      opacity: 1;
+      transform: translate3d(0, 0vw, 0);
+    }
+  }
+}

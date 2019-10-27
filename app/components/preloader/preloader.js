@@ -6,6 +6,7 @@ import {logoAnimation} from "../lottie/lottie";
 const block = $('.js-preloader');
 
 export function preloader () {
+  /*
   logoAnimation();
 
   setTimeout(() => {
@@ -26,7 +27,24 @@ export function preloader () {
 
   setTimeout(() => {
     block.hide();
+
+    // Главная
+    if ($(document).find('.js-slider').length) {
+      window.mySlider.slideTo(0);
+      $(document).find('.js-slider').addClass('is-visible');
+    }
+
+    // 404, Контакты
+    $(document).find('.page-404, .js-contacts').addClass('is-visible');
+  }, 9500); */
+
+  block.hide();
+
+  if ($(document).find('.js-slider').length) {
+    window.mySlider.slideTo(0);
     $(document).find('.js-slider').addClass('is-visible');
-  }, 9500);
+  }
+
+  $(document).find('.page-404, .js-contacts').addClass('is-visible');
 }
 /* eslint-enable */

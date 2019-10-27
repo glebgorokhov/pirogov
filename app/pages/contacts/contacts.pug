@@ -1,0 +1,10 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Контакты'
+
+block content
+  +b.contacts.js-contacts
+    each item in getData('contacts')
+      +e.A.item(href=item.link, target="_blank")
+        span!= item.text

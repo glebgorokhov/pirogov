@@ -1,0 +1,24 @@
+.page-404 {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: (16/1440)*100vw;
+  line-height: 1;
+  color: red;
+  opacity: 0;
+  transition: opacity $ease-long;
+
+  $b: &;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}

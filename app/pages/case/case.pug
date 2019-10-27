@@ -1,0 +1,7 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Кейс'
+
+block content
+  +case(getData('case'))

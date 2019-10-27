@@ -1,0 +1,69 @@
+mixin caseTexts(smalldata)
+  +e.texts
+    +e.H2.case-title!= smalldata.content.title
+    +e.P.case-text!= smalldata.content.text
+
+mixin casePicture(smalldata)
+  +e.picture
+    img(src=smalldata.content.image)
+
+mixin case(data)
+  +b.case&attributes(attributes)
+    +e.line
+    +e.IMG.back(src="assets/images/back.svg")
+
+    each item in data
+      if item.type === "mainScreen"
+        +e.main
+          .container
+            +e.H1.title
+              each span in item.content.title
+                span!= span
+
+            +e.description!= item.content.text
+            +e.UL.tags
+              each tag in item.content.tags
+                +e.LI.tag!= tag
+
+            +e.P.year!= item.content.year
+
+      else
+        +e.screen(style=(item.backgroundColor ? "background-color: " + item.backgroundColor + ";" : false), class=item.class)
+          if item.type === "video"
+            +e.video
+              video(src=item.content.video, autoplay, loop, muted, playsinline, preload="auto")
+
+          if item.type === "texts"
+            +caseTexts(item)
+
+          if item.type === "singlePicture"
+            +casePicture(item)
+
+          if item.type === "doubleSide"
+            each col in item.content
+              +e.screen(style=(col.backgroundColor ? "background-color: " + col.backgroundColor + ";" : false), class=col.class)
+                if col.type === "texts"
+                  +caseTexts(col)
+
+                if col.type === "singlePicture"
+                  +casePicture(col)
+
+          if item.content.backgroundImage
+            +e.background-image
+              img(src=item.content.backgroundImage)
+
+
+
+mixin ui-kit-case()
+  +ui-section
+    +ui-section-head
+      +ui-title Кейс
+      +ui-path
+        p Компонент: components/case/case
+
+    +ui-section-content()
+      +case(getData('case'))
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

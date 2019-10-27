@@ -17,6 +17,7 @@ import '../blocks/dropdown/dropdown';
 import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
 
 import {preloader} from "../components/preloader/preloader";
+import {cases} from "../components/case/case";
 
 const $ = window.$;
 
@@ -40,5 +41,6 @@ $(() => {
   putBlockIntoSlot();
 
   preloader();
+  cases();
 });
 /* eslint-enable */
