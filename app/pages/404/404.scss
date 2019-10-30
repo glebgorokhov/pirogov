@@ -18,6 +18,11 @@
 
   $b: &;
 
+  @include screen('sm') {
+    font-size: (18/375)*100vw;
+    font-weight: 900;
+  }
+
   &.is-visible {
     opacity: 1;
   }

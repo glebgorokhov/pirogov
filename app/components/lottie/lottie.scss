@@ -1,14 +1,23 @@
 .lottie {
   display: block;
   position: fixed;
-  top: 5%;
-  right: 5%;
+  top: 5vw;
+  right: 5vw;
   z-index: 999999999999;
   font-size: 0;
 
   $b: &;
 
+  @include screen('sm') {
+    top: 10vw;
+    right: 10vw;
+  }
+
   svg {
-    width: 14vw !important;
+    width: (142/1440)*100vw !important;
+
+    @include screen('sm') {
+      width: (100/375)*100vw !important;
+    }
   }
 }

@@ -11,6 +11,13 @@
     display: flex;
     align-items: center;
     height: 100%;
+
+    .container {
+      @include screen('sm') {
+        height: 100%;
+        padding: 10vw;
+      }
+    }
   }
 
   &__video {
@@ -21,6 +28,10 @@
     transition: opacity $ease-long;
 
     @include center-block;
+
+    @include screen('sm') {
+      width: 80vw;
+    }
 
     #{$b}.is-visible .swiper-slide-active & {
       opacity: .4;
@@ -53,6 +64,11 @@
     align-items: flex-start;
     cursor: pointer;
 
+    @include screen('sm') {
+      font-size: (22/375)*100vw;
+      line-height: (32/22);
+    }
+
     span {
       display: block;
       position: relative;
@@ -67,6 +83,10 @@
         border-top: 1px solid white;
         opacity: .5;
         transition: transform $ease-main, opacity $ease-main;
+
+        @include screen('sm') {
+          display: none;
+        }
       }
     }
 
@@ -91,50 +111,6 @@
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);
-      }
-    }
-  }
-
-  &__navigation {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
-  &__button {
-    width: 40px;
-    height: 40px;
-    line-height: 38px;
-    border: 1px solid $ui-kit-color-gray;
-    transition: opacity $ease-main;
-    cursor: pointer;
-    background-color: white;
-    position: relative;
-    text-align: center;
-    font-size: 20px;
-    z-index: 1;
-
-    &:hover { opacity: .5; }
-
-    &_next {
-
-      &::before {
-        content: '→';
-      }
-    }
-
-    &_prev {
-
-      &::before {
-        content: '←';
       }
     }
   }

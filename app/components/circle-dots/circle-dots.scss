@@ -7,6 +7,11 @@
   opacity: 0;
   transform: translate3d(0, 6vw, 0);
 
+  @include screen('sm') {
+    width: auto;
+    height: 16px;
+  }
+
   .js-slider.is-visible & {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -25,6 +30,14 @@
     align-items: center;
     width: auto;
     left: auto;
+
+    @include screen('sm') {
+      bottom: 10vw;
+      right: 10vw;
+      left: 10vw;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 
   &__clickable {
@@ -33,6 +46,11 @@
     border-radius: 50%;
 
     @include center-block;
+
+    @include screen('sm') {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__circle {
@@ -46,6 +64,11 @@
 
     &:not(:first-child) {
       margin-top: 30px;
+
+      @include screen('sm') {
+        margin-top: 0;
+        margin-left: 16px;
+      }
     }
 
     svg {
@@ -71,9 +94,18 @@
       height: 32px;
       box-shadow: 0 0 0 1px rgba($color-main, 0) inset;
 
+      @include screen('sm') {
+        width: 16px;
+        height: 16px;
+      }
+
       svg circle {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 5s linear;
+
+        @include screen('sm') {
+          stroke-width: 2px;
+        }
       }
     }
   }

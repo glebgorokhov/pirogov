@@ -38,6 +38,8 @@ export function preloader () {
     $(document).find('.page-404, .js-contacts').addClass('is-visible');
   }, 9500); */
 
+  logoAnimation();
+
   block.hide();
 
   if ($(document).find('.js-slider').length) {

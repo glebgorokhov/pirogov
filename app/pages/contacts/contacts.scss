@@ -5,6 +5,13 @@
 
   $b: &;
 
+  @include screen('sm') {
+    justify-content: space-between;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding: 10vw;
+  }
+
   &__item {
     opacity: 0;
     transition: opacity $ease-long, transform $ease-long;
@@ -22,9 +29,20 @@
     text-align: center;
     text-indent: 0.22vw;
 
+    @include screen('sm') {
+      font-size: (18/375)*100vw;
+      text-indent: 0;
+      flex: 0 auto;
+      font-weight: 900;
+    }
+
     span {
       padding-bottom: (5/1440)*100vw;
       position: relative;
+
+      @include screen('sm') {
+        padding-bottom: 0;
+      }
 
       &::after {
         content: '';
@@ -37,6 +55,10 @@
         margin: auto;
         transition: transform $ease-main;
         transform: translate3d(-50%, 0, 0);
+
+        @include screen('sm') {
+          display: none;
+        }
       }
     }
 
