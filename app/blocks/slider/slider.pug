@@ -4,7 +4,7 @@ mixin slider()
       each item in getData('slides')
         +e.slide.swiper-slide
           .container
-            +e.H2.title
+            +e.H2.title.js-link(data-link="/cases/" + item.linkName + "/")
               each line in item.title
                 span!= line
 

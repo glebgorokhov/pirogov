@@ -31,3 +31,50 @@ body {
 .js-sr {
   visibility: hidden;
 }
+
+.main {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  $b: &;
+
+  &__page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: black;
+
+    opacity: 0;
+    transition: opacity $ease-main;
+    pointer-events: none;
+
+    &.is-visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &_cases {
+      z-index: 9000;
+    }
+
+    &_case {
+      z-index: 9001;
+    }
+
+    &_contacts {
+      z-index: 9002;
+      overflow: hidden;
+    }
+
+    &_404 {
+      z-index: 9003;
+    }
+  }
+}

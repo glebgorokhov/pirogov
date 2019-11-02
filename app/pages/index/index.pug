@@ -1,7 +1,21 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = projectName + ' | Главная'
+  - var pageTitle = projectName
 
 block content
-  +slider
+  +e.page._cases.js-page-cases
+    +slider
+
+  +e.page._case.js-page-case
+    +case(getData('case'))
+
+  +e.page._contacts.js-page-contacts
+    +b.contacts.js-contacts.js-back
+      each item in getData('contacts')
+        +e.item
+          +e.A.link(href=item.link, target="_blank")!= item.text
+
+  +e.page._404.js-page-404
+    a.page-404(href="./")
+      span 404

@@ -18,12 +18,16 @@ import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
 
 import {preloader} from "../components/preloader/preloader";
 import {cases} from "../components/case/case";
+import {router} from "../blocks/js-functions/router";
 
 const $ = window.$;
 
 $(() => {
   svg4everybody();
   objectFitImages();
+
+  router();
+
   anchor();
   selects();
   sliders();

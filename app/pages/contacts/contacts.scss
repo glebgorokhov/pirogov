@@ -36,9 +36,10 @@
       font-weight: 900;
     }
 
-    span {
+    a {
       padding-bottom: (5/1440)*100vw;
       position: relative;
+      display: block;
 
       @include screen('sm') {
         padding-bottom: 0;
@@ -60,10 +61,10 @@
           display: none;
         }
       }
-    }
 
-    &:hover span::after {
-      transform: translate3d(-50%, .4vw, 0);
+      &:hover::after {
+        transform: translate3d(-50%, .4vw, 0);
+      }
     }
 
     @for $i from 1 to 7 {
