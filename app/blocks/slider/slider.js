@@ -16,6 +16,8 @@ export function slider() {
     $.getJSON(url, function (json) {
       let objects = json;
 
+      window.casesCount = objects.length;
+
       $.each(objects, function (i) {
         // Генерируем многострочный заголовок
         function createTitle () {
@@ -32,7 +34,7 @@ export function slider() {
         let html = `
           <div class="slider__slide swiper-slide">
               <div class="container">
-                  <h2 class="slider__title js-link" data-link="/cases/${objects[i].linkName}/">
+                  <h2 class="slider__title js-link js-load-case" data-link="/cases/${objects[i].linkName}/" data-case-id="${i}">
                     ${createTitle()}
                   </h2>
                   <div class="slider__video">

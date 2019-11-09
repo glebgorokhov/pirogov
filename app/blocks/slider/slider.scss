@@ -22,7 +22,7 @@
 
   &__video {
     width: 70vw;
-    height: auto;
+    height: 70vh;
     font-size: 0;
     opacity: 0;
     transition: opacity $ease-long;
@@ -31,16 +31,21 @@
 
     @include screen('sm') {
       width: 80vw;
+      height: 80vh;
     }
 
     #{$b}.is-visible .swiper-slide-active & {
       opacity: .4;
     }
+
+    .is-case-open & {
+      opacity: 0;
+    }
   }
 
   &__video-wrapper {
     width: 100%;
-    padding-bottom: 68%;
+    height: 100%;
     position: relative;
 
     video {
@@ -111,6 +116,18 @@
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .is-case-open & {
+      span {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+
+        &::after {
+          transform: translate3d(0, 0, 0);
+          opacity: 0;
+        }
       }
     }
   }

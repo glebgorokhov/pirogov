@@ -5,30 +5,241 @@
       "Банка ХК"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4",
+    "caseContent": [
+      {
+        "type": "mainScreen",
+        "content": {
+          "title": [
+            "NPS-система",
+            "Банка ХК"
+          ],
+          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "tags": [
+            "UX-design",
+            "UI-design",
+            "game play",
+            "art direction"
+          ],
+          "year": "2017, Q1",
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "video",
+        "class": "case__screen_video",
+        "content": {
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "content": {
+          "image": "/assets/images/cases/1/06@2x.png",
+          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Крутые иконки",
+              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "#2F80ED",
+            "content": {
+              "image": "/assets/images/cases/1/06@2x (1).png"
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
+          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+        }
+      }
+    ]
   },
   {
     "title": [
-      "NPS-система",
-      "Банка ХК"
+      "NPS-система 222",
+      "Банка ХК 222"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4",
+    "caseContent": [
+      {
+        "type": "mainScreen",
+        "content": {
+          "title": [
+            "NPS-система 222",
+            "Банка ХК 222"
+          ],
+          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "tags": [
+            "UX-design",
+            "UI-design",
+            "game play",
+            "art direction"
+          ],
+          "year": "2017, Q1",
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "video",
+        "class": "case__screen_video",
+        "content": {
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "content": {
+          "image": "/assets/images/cases/1/06@2x.png",
+          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Крутые иконки",
+              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "#2F80ED",
+            "content": {
+              "image": "/assets/images/cases/1/06@2x (1).png"
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
+          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+        }
+      }
+    ]
   },
   {
     "title": [
-      "NPS-система",
-      "Банка ХК"
+      "NPS-система 111",
+      "Банка ХК 111"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
-  },
-  {
-    "title": [
-      "NPS-система",
-      "Банка ХК"
-    ],
-    "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4",
+    "caseContent": [
+      {
+        "type": "mainScreen",
+        "content": {
+          "title": [
+            "NPS-система 111",
+            "Банка ХК 111"
+          ],
+          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "tags": [
+            "UX-design",
+            "UI-design",
+            "game play",
+            "art direction"
+          ],
+          "year": "2017, Q1",
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "video",
+        "class": "case__screen_video",
+        "content": {
+          "video": "/assets/videos/Polza-promo.mp4"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "content": {
+          "image": "/assets/images/cases/1/06@2x.png",
+          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Крутые иконки",
+              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "#2F80ED",
+            "content": {
+              "image": "/assets/images/cases/1/06@2x (1).png"
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "content": {
+          "title": "Спецификации для разработчиков",
+          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
+          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+        }
+      }
+    ]
   }
 ]

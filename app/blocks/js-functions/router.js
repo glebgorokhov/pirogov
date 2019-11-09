@@ -8,8 +8,7 @@ export function router () {
   // Прелодер
   page('/', function () {
     console.log('Главная');
-
-    logoAnimation();
+    window.logoAnimation.play();
 
     const block = $('.js-preloader');
 
@@ -22,12 +21,17 @@ export function router () {
     }, 3000);
 
     setTimeout(() => {
+      window.logoAnimation.pause();
+    }, 5000);
+
+    setTimeout(() => {
       block.addClass('is-loaded');
     }, 8000);
 
     setTimeout(() => {
       window.mySlider.slideTo(0);
       page('/cases/');
+      window.logoAnimation.play();
     }, 8500);
 
     setTimeout(() => {
@@ -47,7 +51,6 @@ export function router () {
       $(document).find('.js-slider').addClass('is-visible');
     }
 
-    window.mySlider.allowSlideNext = true;
     $('.js-page-cases').addClass('is-visible');
     page404Close();
   });
@@ -56,7 +59,6 @@ export function router () {
     console.log('Уход с кейсов');
 
     $(document).find('.js-slider').removeClass('is-visible');
-    window.mySlider.allowSlideNext = false;
     $('.js-page-cases').removeClass('is-visible');
     next();
   });
@@ -65,7 +67,10 @@ export function router () {
   page('/cases/:case/', function (e) {
     console.log(`Кейс ${e.params.case}`);
 
-    $('.js-page-case').addClass('is-visible');
+    setTimeout(() => {
+      $('.js-page-case').addClass('is-visible');
+    }, 1000);
+
     page404Close();
   });
 
@@ -73,6 +78,9 @@ export function router () {
     console.log(`Уход с кейса ${e.params.case}`);
 
     $('.js-page-case').removeClass('is-visible');
+    $(document).find('.case').removeClass('is-active');
+    $(document).find('.is-case-open').removeClass('is-case-open');
+    window.mySlider.slideTo(window.currentCase);
     next();
   });
 

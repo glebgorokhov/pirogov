@@ -50,7 +50,6 @@ body {
     bottom: 0;
     overflow-y: auto;
     background: black;
-
     opacity: 0;
     transition: opacity $ease-main;
     pointer-events: none;
@@ -66,6 +65,11 @@ body {
 
     &_case {
       z-index: 9001;
+      overflow-y: scroll;
+
+      &.is-visible {
+        transition: none;
+      }
     }
 
     &_contacts {
