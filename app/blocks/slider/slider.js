@@ -32,7 +32,7 @@ export function slider() {
 
         // Генерируем разметку слайда
         let html = `
-          <div class="slider__slide swiper-slide">
+          <div class="slider__slide swiper-slide" data-case-name="${objects[i].linkName}">
               <div class="container">
                   <h2 class="slider__title js-link js-load-case" data-link="/cases/${objects[i].linkName}/" data-case-id="${i}">
                     ${createTitle()}

@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    width: 30px;
     left: auto;
 
     @include screen('sm') {
@@ -37,6 +37,8 @@
       left: 10vw;
       flex-direction: row;
       justify-content: center;
+      width: auto;
+      height: 16px;
     }
   }
 

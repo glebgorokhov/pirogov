@@ -10,7 +10,7 @@ mixin casePicture(smalldata)
 mixin case(data)
   +b.case&attributes(attributes)
     +e.line
-    +e.IMG.back(src="assets/images/back.svg" data-link="/cases/").js-link
+    +e.IMG.back(src="/assets/images/back.svg" data-link="/cases/").js-link
 
     +e.case-content
       each item in data

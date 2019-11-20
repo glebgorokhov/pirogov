@@ -20,6 +20,8 @@ import {preloader} from "../components/preloader/preloader";
 import {cases} from "../components/case/case";
 import {router} from "../blocks/js-functions/router";
 
+window.currentCase = 0;
+
 const $ = window.$;
 
 $(() => {

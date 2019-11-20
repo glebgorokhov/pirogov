@@ -5,7 +5,7 @@
       "Банка ХК"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4"
   },
   {
     "title": [
@@ -13,7 +13,7 @@
       "Банка ХК"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4"
   },
   {
     "title": [
@@ -21,7 +21,7 @@
       "Банка ХК"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4"
   },
   {
     "title": [
@@ -29,6 +29,6 @@
       "Банка ХК"
     ],
     "linkName": "NPS",
-    "video": "assets/videos/Polza-promo.mp4"
+    "video": "/assets/videos/Polza-promo.mp4"
   }
 ]

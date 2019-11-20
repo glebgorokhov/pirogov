@@ -5,6 +5,17 @@
   right: 5vw;
   z-index: 999999999999;
   font-size: 0;
+  pointer-events: none;
+
+  &.is-clickable {
+    cursor: pointer;
+    transition: opacity $ease-main;
+    pointer-events: all;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
 
   $b: &;
 

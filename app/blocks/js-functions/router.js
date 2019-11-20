@@ -5,6 +5,7 @@ import page from 'page';
 import {logoAnimation} from "../../components/lottie/lottie";
 
 export function router () {
+
   // Прелодер
   page('/', function () {
     console.log('Главная');
@@ -36,6 +37,7 @@ export function router () {
 
     setTimeout(() => {
       block.hide();
+      $('.lottie').addClass('is-clickable');
     }, 9500);
   });
 
@@ -65,17 +67,22 @@ export function router () {
 
   // Кейс
   page('/cases/:case/', function (e) {
-    console.log(`Кейс ${e.params.case}`);
+    if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
+      setTimeout(() => {
+        $('.js-page-case').addClass('is-visible');
+      }, 1000);
 
-    setTimeout(() => {
-      $('.js-page-case').addClass('is-visible');
-    }, 1000);
-
-    page404Close();
+      page404Close();
+    } else {
+      page('/');
+      page404Show();
+    }
   });
 
   page.exit('/cases/:case/', function (e, next) {
     console.log(`Уход с кейса ${e.params.case}`);
+
+    console.log(e);
 
     $('.js-page-case').removeClass('is-visible');
     $(document).find('.case').removeClass('is-active');
@@ -88,6 +95,13 @@ export function router () {
   page('/contacts/', function (e) {
     console.log(`Контакты`);
 
+    window.logoAnimation.setDirection(-1);
+    window.logoAnimation.play();
+
+    setTimeout(() => {
+      window.logoAnimation.pause();
+    }, 2000);
+
     $(document).find('.js-contacts').addClass('is-visible');
     $('.js-page-contacts').addClass('is-visible');
     page404Close();
@@ -96,6 +110,9 @@ export function router () {
   page.exit('/contacts/', function (e, next) {
     console.log(`Контакты`);
 
+    window.logoAnimation.setDirection(1);
+    window.logoAnimation.play();
+
     $(document).find('.js-contacts').removeClass('is-visible');
     $('.js-page-contacts').removeClass('is-visible');
     next();
@@ -103,11 +120,15 @@ export function router () {
 
   // 404
   page('*', function (e) {
+    page404Show();
+  });
+
+  function page404Show () {
     console.log(`404`);
 
     $(document).find('.page-404').addClass('is-visible');
     $('.js-page-404').addClass('is-visible');
-  });
+  }
 
   function page404Close () {
     // Уход с 404
