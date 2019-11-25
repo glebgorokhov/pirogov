@@ -34,7 +34,7 @@ export function slider() {
         let html = `
           <div class="slider__slide swiper-slide" data-case-name="${objects[i].linkName}">
               <div class="container">
-                  <h2 class="slider__title js-link js-load-case" data-link="/cases/${objects[i].linkName}/" data-case-id="${i}">
+                  <h2 class="slider__title js-link" data-link="/cases/${objects[i].linkName}/" data-case-id="${objects[i].linkName}">
                     ${createTitle()}
                   </h2>
                   <div class="slider__video">

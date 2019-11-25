@@ -2,12 +2,17 @@
 const $ = window.$;
 
 import page from 'page';
+import {loadCase} from "../../components/case/case";
 
 let
   isMainPage = window.location.pathname === '/',
   isPageChanged = false;
 
-const logoContainer = $('.lottie');
+if (!window.currentCase) window.currentCase = 0;
+
+const
+  logoContainer = $('.lottie'),
+  preloader = $('.js-preloader');
 
 // Показать/скрыть страницу 404
 function page404Toggle (hide) {
@@ -16,8 +21,14 @@ function page404Toggle (hide) {
 }
 
 // Смена активного контейнера (при переключении страниц)
-function changeContainer (selector) {
-  $(document).find(selector).addClass('is-visible').siblings().removeClass('is-visible');
+function changeContainer (selector, delayOne, delayTwo) {
+  setTimeout(() => {
+    $(document).find(selector).addClass('is-visible');
+  }, delayOne || 0);
+
+  setTimeout(() => {
+    $(document).find(selector).siblings().removeClass('is-visible');
+  }, delayTwo || 0);
 
   page404Toggle(true);
 
@@ -35,6 +46,13 @@ function changeContainer (selector) {
   } else {
     $('.js-contacts').removeClass('is-visible');
     if (!isMainPage && !isPageChanged) window.logoToFirstState();
+  }
+
+  // Переход в кейс
+  if (selector === '.js-page-case') {
+    $(document).find('.case').addClass('is-active');
+  } else {
+    $(document).find('.case').removeClass('is-active');
   }
 
   isPageChanged = true;
@@ -58,8 +76,10 @@ function contactsLogo (backwards) {
 }
 
 export function router () {
+  console.log('Страница главная: ' + isMainPage);
+
   if (!isMainPage) {
-    window.logoToSecondState();
+    preloader.hide();
   }
 
   // Прелодер
@@ -68,14 +88,12 @@ export function router () {
     window.logoAnimation.play();
     isPageChanged = true;
 
-    const block = $('.js-preloader');
-
     setTimeout(() => {
-      block.addClass('is-visible');
+      preloader.addClass('is-visible');
     }, 2000);
 
     setTimeout(() => {
-      block.addClass('is-loading');
+      preloader.addClass('is-loading');
     }, 3000);
 
     setTimeout(() => {
@@ -83,7 +101,7 @@ export function router () {
     }, 5000);
 
     setTimeout(() => {
-      block.addClass('is-loaded');
+      preloader.addClass('is-loaded');
     }, 8000);
 
     setTimeout(() => {
@@ -92,8 +110,8 @@ export function router () {
     }, 8500);
 
     setTimeout(() => {
-      block.hide();
-      $('.lottie').addClass('is-clickable');
+      preloader.hide();
+      logoContainer.addClass('is-clickable');
       page('/cases/');
     }, 9700);
   });
@@ -108,12 +126,10 @@ export function router () {
   function logicCase () {
     page('/cases/:case/', function (e) {
       if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
-        setTimeout(() => {
-          changeContainer('.js-page-case');
-        }, 1000);
+        loadCase($(document).find(`.slider__slide[data-case-name="${e.params.case}"]`).index());
+        changeContainer('.js-page-case');
       } else {
-        console.log('Кейс не существует! Редирект на главную');
-        page('/cases/');
+        console.log('Кейс не существует!');
         page404Toggle();
       }
     });
@@ -121,11 +137,9 @@ export function router () {
     page.exit('/cases/:case/', function (e, next) {
       console.log(`Уход с кейса ${e.params.case}`);
 
-      console.log(e);
-
-      $('.js-page-case').removeClass('is-visible');
       $(document).find('.case').removeClass('is-active');
       $(document).find('.is-case-open').removeClass('is-case-open');
+
       window.mySlider.slideTo(window.currentCase);
       next();
     });

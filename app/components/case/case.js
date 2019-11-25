@@ -165,6 +165,52 @@ function posDifference (id, action) {
 
 let loadAllowed = true;
 
+export function loadCase (caseID) {
+  const
+    url = '/assets/json/cases.json',
+    caseContent = $('.js-page-case .case__case-content');
+
+  window.currentCase = caseID;
+
+  $('.main__page_case').scrollTop(0);
+  $('.js-page-cases').addClass('is-visible');
+
+  $(document).find(`.swiper-slide:eq(${caseID})`).addClass('is-case-open');
+
+  $.getJSON(url, function (json) {
+    const section = json[caseID].caseContent;
+
+    caseContent.html('');
+
+    $.each(section, function (i) {
+      const
+        type = section[i].type,
+        data = section[i].content,
+        object = section[i];
+
+      let html = generateSection(type, data, object);
+
+      caseContent.append(html);
+    });
+
+    function addLastSection () {
+      const section = json[caseID+2 > casesCount ? 0 : caseID + 1].caseContent;
+
+      const
+        type = section[0].type,
+        data = section[0].content,
+        object = section[0];
+
+      let html = generateSection(type, data, object);
+
+      caseContent.append($(html).addClass('is-last'));
+    }
+
+    addLastSection();
+    posDifference(caseID);
+  });
+}
+
 export function cases () {
   $('.main__page_case').scroll(function () {
     const
@@ -237,52 +283,6 @@ export function cases () {
       if (loadAllowed) loadNextCase();
       // ###############
     }
-  });
-
-  $(document).on('click', '.js-load-case', function () {
-    const
-      caseID = $(this).data('case-id'),
-      url = '/assets/json/cases.json',
-      caseContent = $('.js-page-case .case__case-content');
-
-    window.currentCase = caseID;
-
-    $('.main__page_case').scrollTop(0);
-    $('.js-page-cases').addClass('is-visible');
-    $(this).closest('.swiper-slide').addClass('is-case-open');
-
-    $.getJSON(url, function (json) {
-      const section = json[caseID].caseContent;
-
-      caseContent.html('');
-
-      $.each(section, function (i) {
-        const
-          type = section[i].type,
-          data = section[i].content,
-          object = section[i];
-
-        let html = generateSection(type, data, object);
-
-        caseContent.append(html);
-      });
-
-      function addLastSection () {
-        const section = json[caseID+2 > casesCount ? 0 : caseID + 1].caseContent;
-
-        const
-          type = section[0].type,
-          data = section[0].content,
-          object = section[0];
-
-        let html = generateSection(type, data, object);
-
-        caseContent.append($(html).addClass('is-last'));
-      }
-
-      addLastSection();
-      posDifference(caseID);
-    });
   });
 }
 /* eslint-enable */
