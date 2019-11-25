@@ -173,7 +173,6 @@ export function loadCase (caseID) {
   window.currentCase = caseID;
 
   $('.main__page_case').scrollTop(0);
-  $('.js-page-cases').addClass('is-visible');
 
   $(document).find(`.swiper-slide:eq(${caseID})`).addClass('is-case-open');
 

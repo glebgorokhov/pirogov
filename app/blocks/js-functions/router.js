@@ -35,6 +35,7 @@ function changeContainer (selector, delayOne, delayTwo) {
   // Состояние слайдера
   if (selector === '.js-page-cases') {
     $('.js-slider').addClass('is-visible');
+    $(document).find('.case').removeClass('is-active');
   } else {
     $('.js-slider').removeClass('is-visible');
   }
@@ -50,9 +51,6 @@ function changeContainer (selector, delayOne, delayTwo) {
 
   // Переход в кейс
   if (selector === '.js-page-case') {
-    $(document).find('.case').addClass('is-active');
-  } else {
-    $(document).find('.case').removeClass('is-active');
   }
 
   isPageChanged = true;
@@ -119,6 +117,8 @@ export function router () {
   // Кейсы
   page('/cases/', function () {
     console.log('Кейсы');
+    $(document).find('.case').removeClass('is-active');
+    $(document).find('.is-case-open').removeClass('is-case-open');
     changeContainer('.js-page-cases');
   });
 
@@ -127,7 +127,7 @@ export function router () {
     page('/cases/:case/', function (e) {
       if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
         loadCase($(document).find(`.slider__slide[data-case-name="${e.params.case}"]`).index());
-        changeContainer('.js-page-case');
+        changeContainer('.js-page-case', 1000, 1000);
       } else {
         console.log('Кейс не существует!');
         page404Toggle();
@@ -136,9 +136,6 @@ export function router () {
 
     page.exit('/cases/:case/', function (e, next) {
       console.log(`Уход с кейса ${e.params.case}`);
-
-      $(document).find('.case').removeClass('is-active');
-      $(document).find('.is-case-open').removeClass('is-case-open');
 
       window.mySlider.slideTo(window.currentCase);
       next();
