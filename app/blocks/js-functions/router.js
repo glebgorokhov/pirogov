@@ -22,6 +22,8 @@ function page404Toggle (hide) {
 
 // Смена активного контейнера (при переключении страниц)
 function changeContainer (selector, delayOne, delayTwo) {
+  console.log(isMainPage, isPageChanged);
+
   setTimeout(() => {
     $(document).find(selector).addClass('is-visible');
   }, delayOne || 0);
@@ -35,6 +37,7 @@ function changeContainer (selector, delayOne, delayTwo) {
   // Состояние слайдера
   if (selector === '.js-page-cases') {
     $('.js-slider').addClass('is-visible');
+    window.mySlider.slideTo(window.currentCase);
     $(document).find('.case').removeClass('is-active');
   } else {
     $('.js-slider').removeClass('is-visible');
@@ -43,10 +46,10 @@ function changeContainer (selector, delayOne, delayTwo) {
   // Переход в контакты
   if (selector === '.js-page-contacts') {
     $('.js-contacts').addClass('is-visible');
-    if (!isMainPage && !isPageChanged) window.logoToSecondState();
+    if (!isMainPage && !isPageChanged) window.logoToFirstState();
   } else {
     $('.js-contacts').removeClass('is-visible');
-    if (!isMainPage && !isPageChanged) window.logoToFirstState();
+    if (!isMainPage && !isPageChanged) window.logoToSecondState();
   }
 
   // Переход в кейс
@@ -78,6 +81,7 @@ export function router () {
 
   if (!isMainPage) {
     preloader.hide();
+    logoContainer.addClass('is-clickable');
   }
 
   // Прелодер
@@ -136,8 +140,6 @@ export function router () {
 
     page.exit('/cases/:case/', function (e, next) {
       console.log(`Уход с кейса ${e.params.case}`);
-
-      window.mySlider.slideTo(window.currentCase);
       next();
     });
   }

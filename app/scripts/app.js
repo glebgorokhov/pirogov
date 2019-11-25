@@ -29,25 +29,9 @@ $(() => {
   svg4everybody();
   objectFitImages();
 
-  router();
-
-  anchor();
-  selects();
-  sliders();
-  popups();
-  scrollbar();
   slider();
-  tooltips();
-  tabs();
-  datepicker();
-  inputmask();
-  numberinput();
-  maps();
-  scrollAnimation();
-  accordion();
-  putBlockIntoSlot();
-
   preloader();
   cases();
+  router();
 });
 /* eslint-enable */
