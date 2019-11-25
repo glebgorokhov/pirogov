@@ -16,6 +16,7 @@ import '../blocks/rating/rating';
 import '../blocks/dropdown/dropdown';
 import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
 
+import "../components/lottie/lottie";
 import {preloader} from "../components/preloader/preloader";
 import {cases} from "../components/case/case";
 import {router} from "../blocks/js-functions/router";

@@ -2,14 +2,71 @@
 const $ = window.$;
 
 import page from 'page';
-import {logoAnimation} from "../../components/lottie/lottie";
+
+let
+  isMainPage = window.location.pathname === '/',
+  isPageChanged = false;
+
+const logoContainer = $('.lottie');
+
+// Показать/скрыть страницу 404
+function page404Toggle (hide) {
+  hide ? $(document).find('.page-404').removeClass('is-visible') : $(document).find('.page-404').addClass('is-visible');
+  hide ? $('.js-page-404').removeClass('is-visible') : $('.js-page-404').addClass('is-visible');
+}
+
+// Смена активного контейнера (при переключении страниц)
+function changeContainer (selector) {
+  $(document).find(selector).addClass('is-visible').siblings().removeClass('is-visible');
+
+  page404Toggle(true);
+
+  // Состояние слайдера
+  if (selector === '.js-page-cases') {
+    $('.js-slider').addClass('is-visible');
+  } else {
+    $('.js-slider').removeClass('is-visible');
+  }
+
+  // Переход в контакты
+  if (selector === '.js-page-contacts') {
+    $('.js-contacts').addClass('is-visible');
+    if (!isMainPage && !isPageChanged) window.logoToSecondState();
+  } else {
+    $('.js-contacts').removeClass('is-visible');
+    if (!isMainPage && !isPageChanged) window.logoToFirstState();
+  }
+
+  isPageChanged = true;
+}
+
+// Анимация лого в контактах
+function contactsLogo (backwards) {
+  if (!backwards) {
+    window.logoAnimation.setDirection(-1);
+    window.logoAnimation.play();
+    logoContainer.removeClass('is-clickable');
+  } else {
+    window.logoAnimation.setDirection(1);
+    window.logoAnimation.play();
+    logoContainer.addClass('is-clickable');
+  }
+
+  setTimeout(() => {
+    window.logoAnimation.pause();
+  }, 1200);
+}
 
 export function router () {
+  if (!isMainPage) {
+    window.logoToSecondState();
+  }
 
   // Прелодер
   page('/', function () {
     console.log('Главная');
     window.logoAnimation.play();
+    isPageChanged = true;
 
     const block = $('.js-preloader');
 
@@ -31,110 +88,68 @@ export function router () {
 
     setTimeout(() => {
       window.mySlider.slideTo(0);
-      page('/cases/');
       window.logoAnimation.play();
     }, 8500);
 
     setTimeout(() => {
       block.hide();
       $('.lottie').addClass('is-clickable');
-    }, 9500);
+      page('/cases/');
+    }, 9700);
   });
-
-  /* page.exit('/', function (e) {
-    console.log('Уходим с главной');
-  }); */
 
   // Кейсы
   page('/cases/', function () {
     console.log('Кейсы');
-
-    if ($(document).find('.js-slider').length) {
-      $(document).find('.js-slider').addClass('is-visible');
-    }
-
-    $('.js-page-cases').addClass('is-visible');
-    page404Close();
-  });
-
-  page.exit('/cases/', function (e, next) {
-    console.log('Уход с кейсов');
-
-    $(document).find('.js-slider').removeClass('is-visible');
-    $('.js-page-cases').removeClass('is-visible');
-    next();
+    changeContainer('.js-page-cases');
   });
 
   // Кейс
-  page('/cases/:case/', function (e) {
-    if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
-      setTimeout(() => {
-        $('.js-page-case').addClass('is-visible');
-      }, 1000);
+  function logicCase () {
+    page('/cases/:case/', function (e) {
+      if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
+        setTimeout(() => {
+          changeContainer('.js-page-case');
+        }, 1000);
+      } else {
+        console.log('Кейс не существует! Редирект на главную');
+        page('/cases/');
+        page404Toggle();
+      }
+    });
 
-      page404Close();
-    } else {
-      page('/');
-      page404Show();
-    }
-  });
+    page.exit('/cases/:case/', function (e, next) {
+      console.log(`Уход с кейса ${e.params.case}`);
 
-  page.exit('/cases/:case/', function (e, next) {
-    console.log(`Уход с кейса ${e.params.case}`);
+      console.log(e);
 
-    console.log(e);
-
-    $('.js-page-case').removeClass('is-visible');
-    $(document).find('.case').removeClass('is-active');
-    $(document).find('.is-case-open').removeClass('is-case-open');
-    window.mySlider.slideTo(window.currentCase);
-    next();
-  });
+      $('.js-page-case').removeClass('is-visible');
+      $(document).find('.case').removeClass('is-active');
+      $(document).find('.is-case-open').removeClass('is-case-open');
+      window.mySlider.slideTo(window.currentCase);
+      next();
+    });
+  }
+  logicCase();
 
   // Контакты
-  page('/contacts/', function (e) {
-    console.log(`Контакты`);
+  function logicContacts () {
+    page('/contacts/', function (e) {
+      contactsLogo();
+      changeContainer('.js-page-contacts');
+    });
 
-    window.logoAnimation.setDirection(-1);
-    window.logoAnimation.play();
-
-    setTimeout(() => {
-      window.logoAnimation.pause();
-    }, 2000);
-
-    $(document).find('.js-contacts').addClass('is-visible');
-    $('.js-page-contacts').addClass('is-visible');
-    page404Close();
-  });
-
-  page.exit('/contacts/', function (e, next) {
-    console.log(`Контакты`);
-
-    window.logoAnimation.setDirection(1);
-    window.logoAnimation.play();
-
-    $(document).find('.js-contacts').removeClass('is-visible');
-    $('.js-page-contacts').removeClass('is-visible');
-    next();
-  });
+    page.exit('/contacts/', function (e, next) {
+      contactsLogo(true);
+      next();
+    });
+  }
+  logicContacts();
 
   // 404
   page('*', function (e) {
-    page404Show();
+    page404Toggle();
   });
-
-  function page404Show () {
-    console.log(`404`);
-
-    $(document).find('.page-404').addClass('is-visible');
-    $('.js-page-404').addClass('is-visible');
-  }
-
-  function page404Close () {
-    // Уход с 404
-    $(document).find('.page-404').removeClass('is-visible');
-    $('.js-page-404').removeClass('is-visible');
-  }
 
   // Инициализация
   page();

@@ -2,10 +2,10 @@
   {
     "title": [
       "NPS-система",
-      "Банка ХК"
+      "банка ХК"
     ],
     "linkName": "NPS",
-    "video": "/assets/videos/Polza-promo.mp4",
+    "video": "/assets/videos/Promo-Polza.mp4",
     "caseContent": [
       {
         "type": "mainScreen",
@@ -14,6 +14,100 @@
             "NPS-система",
             "Банка ХК"
           ],
+          "text": "Лучшая система лояльности 2019&nbsp;г. по&nbsp;версии Frank Banking Reward Award",
+          "tags": [
+            "Rethinking CX/UX/UI"
+          ],
+          "year": "© Home Credit Bank, 2017, Q4",
+          "video": "/assets/videos/Promo-Polza.mp4"
+        }
+      },
+      {
+        "type": "video",
+        "class": "case__screen_video",
+        "content": {
+          "video": "/assets/videos/Case-Polza.mp4"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "UX-аналитика",
+          "text": "На начальном этапе были определены основные проблемы существующей дизайн-концепции: <br/>1. Слишком много уделено внимания поиску;<br/>2. Непонятно, к&nbsp;чему относится банковская карта;<br/>3. Баллы — главная информация, а&nbsp;она спрятана внизу экрана;<br/>4. Плохо сверстан блок с&nbsp;категориями фильтра, что нигативно сказывается на&nbsp;эргономике интерфейса."
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#fff",
+        "content": {
+          "image": "/assets/images/cases/Polza/01@2x.png"
+        }
+      },
+      {
+        "type": "texts",
+        "content": {
+          "title": "Новый бизнес-процесс",
+          "text": "Сначала оценили возможность нового Customer Expirience с&nbsp;бизнес-юнитом.",
+          "backgroundImage": "/assets/images/cases/Polza/02.jpg",
+          "backgroundSize": "cover",
+          "backgroundRepeat": "repeat"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "content": {
+          "image": "/assets/images/cases/Polza/03@2x.jpg",
+          "backgroundImage": "/assets/images/cases/Polza/04.png"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "#000",
+            "content": {
+              "image": "/assets/images/cases/Polza/05-1@2x.png"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Polza/05-2@2x.png"
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "+12 к просмотру рекламы, за&nbsp;счёт рекомендуемых акций",
+          "text": ""
+        }
+      }
+    ]
+  },
+  {
+    "title": [
+      "Екатеринбург",
+      "в Каннах"
+    ],
+    "linkName": "Istokskiy",
+    "video": "/assets/videos/Promo-Istokskiy.mp4",
+    "caseContent": [
+      {
+        "type": "mainScreen",
+        "content": {
+          "title": [
+            "Екатеринбург",
+            "в Каннах"
+          ],
           "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
           "tags": [
             "UX-design",
@@ -22,7 +116,7 @@
             "art direction"
           ],
           "year": "2017, Q1",
-          "video": "/assets/videos/Polza-promo.mp4"
+          "video": "/assets/videos/Case-Istokskiy.mp4"
         }
       },
       {
@@ -82,18 +176,18 @@
   },
   {
     "title": [
-      "NPS-система 222",
-      "Банка ХК 222"
+      "Терминал",
+      "финпродуктов"
     ],
-    "linkName": "NPS",
-    "video": "/assets/videos/Polza-promo.mp4",
+    "linkName": "atm",
+    "video": "/assets/videos/Promo-ATM.mp4",
     "caseContent": [
       {
         "type": "mainScreen",
         "content": {
           "title": [
-            "NPS-система 222",
-            "Банка ХК 222"
+            "Терминал",
+            "финпродуктов"
           ],
           "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
           "tags": [
@@ -103,7 +197,7 @@
             "art direction"
           ],
           "year": "2017, Q1",
-          "video": "/assets/videos/Polza-promo.mp4"
+          "video": "/assets/videos/Promo-ATM.mp4"
         }
       },
       {
@@ -112,44 +206,6 @@
         "content": {
           "video": "/assets/videos/Polza-promo.mp4"
         }
-      },
-      {
-        "type": "singlePicture",
-        "content": {
-          "image": "/assets/images/cases/1/06@2x.png",
-          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
-        }
-      },
-      {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
-        }
-      },
-      {
-        "type": "doubleSide",
-        "class": "case__screen_double",
-        "content": [
-          {
-            "type": "texts",
-            "class": "case__screen_light",
-            "backgroundColor": "white",
-            "content": {
-              "title": "Крутые иконки",
-              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
-            }
-          },
-          {
-            "type": "singlePicture",
-            "backgroundColor": "#2F80ED",
-            "content": {
-              "image": "/assets/images/cases/1/06@2x (1).png"
-            }
-          }
-        ]
       },
       {
         "type": "texts",
@@ -163,18 +219,18 @@
   },
   {
     "title": [
-      "NPS-система 111",
-      "Банка ХК 111"
+      "ЖКХ",
+      "по-новому"
     ],
-    "linkName": "NPS",
-    "video": "/assets/videos/Polza-promo.mp4",
+    "linkName": "atm",
+    "video": "/assets/videos/Promo-PIK.mp4",
     "caseContent": [
       {
         "type": "mainScreen",
         "content": {
           "title": [
-            "NPS-система 111",
-            "Банка ХК 111"
+            "Терминал",
+            "финпродуктов"
           ],
           "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
           "tags": [
@@ -184,7 +240,7 @@
             "art direction"
           ],
           "year": "2017, Q1",
-          "video": "/assets/videos/Polza-promo.mp4"
+          "video": "/assets/videos/Promo-ATM.mp4"
         }
       },
       {
@@ -193,44 +249,6 @@
         "content": {
           "video": "/assets/videos/Polza-promo.mp4"
         }
-      },
-      {
-        "type": "singlePicture",
-        "content": {
-          "image": "/assets/images/cases/1/06@2x.png",
-          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
-        }
-      },
-      {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
-        }
-      },
-      {
-        "type": "doubleSide",
-        "class": "case__screen_double",
-        "content": [
-          {
-            "type": "texts",
-            "class": "case__screen_light",
-            "backgroundColor": "white",
-            "content": {
-              "title": "Крутые иконки",
-              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
-            }
-          },
-          {
-            "type": "singlePicture",
-            "backgroundColor": "#2F80ED",
-            "content": {
-              "image": "/assets/images/cases/1/06@2x (1).png"
-            }
-          }
-        ]
       },
       {
         "type": "texts",

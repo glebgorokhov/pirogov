@@ -10,4 +10,12 @@ window.logoAnimation = lottie.loadAnimation({
   autoplay: false,
   path: 'assets/json/logo.json'
 });
+
+window.logoToSecondState = function () {
+  window.logoAnimation.goToAndStop(6200);
+};
+
+window.logoToFirstState = function () {
+  window.logoAnimation.goToAndStop(5000);
+};
 /* eslint-enable */
