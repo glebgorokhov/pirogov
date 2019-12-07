@@ -19,6 +19,19 @@
     <meta name="theme-color" content="#000000">
     <link href="/assets/styles/app.min.css" rel="stylesheet">
     <script src="/assets/scripts/libs/jquery.min.js"></script>
+    <script>
+        window.casesNames = [];
+        window.casesNamesSimple = [];
+
+        $.getJSON('/assets/json/cases.json', function(json) {
+            var objects = json;
+
+            $.each(objects, function(i) {
+                window.casesNames[objects[i].linkName] = true;
+                window.casesNamesSimple.push(objects[i].linkName);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,6 +47,9 @@
     <main class="main js-page-content" role="main">
         <div class="case">
             <div class="case__line"></div><img class="case__back js-link" src="/assets/images/back.svg" data-link="/cases/" alt="" role="presentation" />
+            <div class="case__case-loader js-case-loader"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                    <circle class="js-circle-dot-percent" cx="30" cy="30" r="29" stroke-width="1"></circle>
+                </svg></div>
             <div class="case__case-content">
                 <div class="case__main">
                     <div class="container">

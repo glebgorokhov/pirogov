@@ -42,7 +42,8 @@
         "type": "singlePicture",
         "backgroundColor": "#fff",
         "content": {
-          "image": "/assets/images/cases/Polza/01@2x.png"
+          "image": "/assets/images/cases/Polza/01@2x.png",
+          "imageWidth": "1219"
         }
       },
       {
@@ -59,7 +60,8 @@
         "type": "singlePicture",
         "content": {
           "image": "/assets/images/cases/Polza/03@2x.jpg",
-          "backgroundImage": "/assets/images/cases/Polza/04.png"
+          "backgroundImage": "/assets/images/cases/Polza/04.png",
+          "backgroundSize": "auto"
         }
       },
       {
@@ -89,6 +91,63 @@
         "content": {
           "title": "+12 к просмотру рекламы, за&nbsp;счёт рекомендуемых акций",
           "text": ""
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#fff",
+        "content": {
+          "image": "/assets/images/cases/Polza/07@2x.png",
+          "backgroundImage": "/assets/images/cases/Polza/06.jpg",
+          "backgroundSize": "cover"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#fff",
+        "content": {
+          "image": "/assets/images/cases/Polza/08@2x.gif"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#D4D7DC",
+        "content": {
+          "image": "/assets/images/cases/Polza/09@2x.jpg",
+          "backgroundImage": "/assets/images/cases/Polza/09.jpg",
+          "backgroundSize": "auto"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Мобильный трафик — 34%",
+          "text": ""
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/Polza/10@2x.jpg"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "black",
+        "content": {
+          "title": "<a href='http://polza.homecredit.ru/'>polza.homecredit.ru</a>",
+          "text": "К сожалению, личный кабинет доступен только клиентам Хоум Кредит Банка. Закажите карту и&nbsp;наслаждайтесь действительно высоким cashback'ом и&nbsp;понятным интерфейсом :) "
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#000",
+        "content": {
+          "image": "/assets/images/cases/Polza/11@2x.png"
         }
       }
     ]
@@ -229,8 +288,8 @@
         "type": "mainScreen",
         "content": {
           "title": [
-            "Терминал",
-            "финпродуктов"
+            "ЖКХ",
+            "по-новому"
           ],
           "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
           "tags": [

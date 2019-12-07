@@ -19,6 +19,19 @@
     <meta name="theme-color" content="#000000">
     <link href="/assets/styles/app.min.css" rel="stylesheet">
     <script src="/assets/scripts/libs/jquery.min.js"></script>
+    <script>
+        window.casesNames = [];
+        window.casesNamesSimple = [];
+
+        $.getJSON('/assets/json/cases.json', function(json) {
+            var objects = json;
+
+            $.each(objects, function(i) {
+                window.casesNames[objects[i].linkName] = true;
+                window.casesNamesSimple.push(objects[i].linkName);
+            });
+        });
+    </script>
 </head>
 
 <body>
