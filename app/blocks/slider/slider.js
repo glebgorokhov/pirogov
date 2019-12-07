@@ -5,6 +5,8 @@ import * as Swiper from 'swiper/dist/js/swiper';
 const $ = window.$;
 
 export function slider() {
+  window.mySlider = '';
+
   $('.js-slider').each(function () {
     const
       block = $(this),

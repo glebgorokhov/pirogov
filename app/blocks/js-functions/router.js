@@ -37,7 +37,9 @@ function changeContainer (selector, delayOne, delayTwo) {
   // Состояние слайдера
   if (selector === '.js-page-cases') {
     $('.js-slider').addClass('is-visible');
-    window.mySlider.slideTo(window.currentCase);
+    if (window.mySlider.params) {
+      window.mySlider.slideTo(window.currentCase);
+    }
     $(document).find('.case').removeClass('is-active');
   } else {
     $('.js-slider').removeClass('is-visible');
@@ -133,7 +135,7 @@ export function router () {
         loadCase($(document).find(`.slider__slide[data-case-name="${e.params.case}"]`).index());
         changeContainer('.js-page-case', 1000, 1000);
       } else {
-        console.log('Кейс не существует!');
+        console.log(`Кейс ${e.params.case} не существует!`);
         page404Toggle();
       }
     });

@@ -7,10 +7,10 @@
   bottom: 0;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.25em;
+  letter-spacing: .25em;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: (16/1440)*100vw;
+  font-size: (16/1440) *100vw;
   line-height: 1;
   color: red;
   opacity: 0;
@@ -20,7 +20,7 @@
   $b: &;
 
   @include screen('sm') {
-    font-size: (18/375)*100vw;
+    font-size: (18/375) *100vw;
     font-weight: 900;
   }
 

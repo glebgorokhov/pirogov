@@ -62,7 +62,7 @@
     position: relative;
     font-size: 5vw;
     line-height: (92/72);
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@
     cursor: pointer;
 
     @include screen('sm') {
-      font-size: (22/375)*100vw;
+      font-size: (22/375) *100vw;
       line-height: (32/22);
       pointer-events: none;
     }
@@ -97,7 +97,7 @@
     }
 
     &:hover span::after {
-      transform: translate3d(0, -0.5vw, 0);
+      transform: translate3d(0, -.5vw, 0);
       opacity: 1;
     }
 
@@ -107,13 +107,15 @@
       opacity: 0;
 
       @for $i from 1 to 4 {
+
         &:nth-child(#{$i}) {
-          transition-delay: #{0.1s * $i};
+          transition-delay: #{.1s * $i};
         }
       }
     }
 
     .js-slider.is-visible & {
+
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -121,6 +123,7 @@
     }
 
     .is-case-open & {
+
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);

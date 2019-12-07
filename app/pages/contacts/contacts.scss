@@ -21,23 +21,23 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: (16/1440)*100vw;
+    letter-spacing: .25em;
+    font-size: (16/1440) *100vw;
     font-weight: 700;
     line-height: 1;
     color: red;
     text-align: center;
-    text-indent: 0.22vw;
+    text-indent: .22vw;
 
     @include screen('sm') {
-      font-size: (18/375)*100vw;
+      font-size: (18/375) *100vw;
       text-indent: 0;
       flex: 0 auto;
       font-weight: 900;
     }
 
     a {
-      padding-bottom: (5/1440)*100vw;
+      padding-bottom: (5/1440) *100vw;
       position: relative;
       display: block;
 
@@ -47,7 +47,7 @@
 
       &::after {
         content: '';
-        width: (25/1440)*100vw;
+        width: (25/1440) *100vw;
         height: 0;
         border-top: 1px solid $color-main;
         position: absolute;
@@ -68,14 +68,15 @@
     }
 
     @for $i from 1 to 7 {
+
       &:nth-child(#{$i}) {
-        transition-delay: #{0.2s * $i};
+        transition-delay: #{.2s * $i};
       }
     }
 
     #{$b}.is-visible & {
       opacity: 1;
-      transform: translate3d(0, 0vw, 0);
+      transform: translate3d(0, 0, 0);
     }
   }
 }

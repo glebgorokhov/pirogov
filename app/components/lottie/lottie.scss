@@ -25,10 +25,10 @@
   }
 
   svg {
-    width: (142/1440)*100vw !important;
+    width: (142/1440) *100vw !important;
 
     @include screen('sm') {
-      width: (100/375)*100vw !important;
+      width: (100/375) *100vw !important;
     }
   }
 }

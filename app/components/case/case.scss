@@ -4,6 +4,7 @@
   $b: &;
 
   @keyframes line {
+
     0% {
       transform: translate3d(0, -100%, 0);
     }
@@ -51,10 +52,10 @@
 
   &__line {
     position: fixed;
-    bottom: (70/900)*100vh;
-    right: (70/1440)*100vw;
+    bottom: (70/900) *100vh;
+    right: (70/1440) *100vw;
     width: 2px;
-    height: (140/900)*100vh;
+    height: (140/900) *100vh;
     overflow: hidden;
     transition: transform $ease-long, opacity $ease-long;
 
@@ -76,9 +77,9 @@
 
   &__back {
     position: fixed;
-    width: (60/1440)*100vw;
-    left: (44/1440)*100vw;
-    top: (68/900)*100vh;
+    width: (60/1440) *100vw;
+    left: (44/1440) *100vw;
+    top: (68/900) *100vh;
     cursor: pointer;
     z-index: 5;
     opacity: 0;
@@ -100,11 +101,12 @@
   }
 
   // Main screen
+
   &__main {
     min-height: 100vh;
     box-sizing: border-box;
     padding-top: 25vh;
-    padding-bottom: (70/900)*100vh;
+    padding-bottom: (70/900) *100vh;
     display: flex;
     position: relative;
 
@@ -115,9 +117,9 @@
   }
 
   &__title {
-    font-size: (72/1440)*100vw;
+    font-size: (72/1440) *100vw;
     line-height: (92/72);
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     position: relative;
     z-index: 2;
@@ -133,7 +135,7 @@
   }
 
   &__description {
-    font-size: (28/1440)*100vw;
+    font-size: (28/1440) *100vw;
     line-height: (48/28);
     opacity: 0;
     transition: opacity $ease-long 1s;
@@ -149,7 +151,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: (47/1440)*100vw;
+      margin-top: (47/1440) *100vw;
     }
   }
 
@@ -171,15 +173,16 @@
     }
 
     &:not(:first-child) {
-      margin-top: (37/1440)*100vw;
+      margin-top: (37/1440) *100vw;
     }
   }
 
   &__tag {
-    font-size: (16/1440)*100vw;
+    font-size: (16/1440) *100vw;
     line-height: (20/16);
 
     &:not(:last-child) {
+
       &::after {
         content: ',\00a0';
       }
@@ -187,7 +190,7 @@
   }
 
   &__year {
-    font-size: (13/1440)*100vw;
+    font-size: (13/1440) *100vw;
     line-height: (16/13);
     opacity: 0;
     transition: opacity $ease-long 1s;
@@ -203,11 +206,12 @@
     }
 
     &:not(:first-child) {
-      margin-top: (80/1440)*100vw;
+      margin-top: (80/1440) *100vw;
     }
   }
 
   // Screen
+
   &__screen {
     width: 100%;
     min-height: 100vh;
@@ -283,7 +287,7 @@
   }
 
   &__case-title {
-    font-size: (62/1440)*100vw;
+    font-size: (62/1440) *100vw;
     line-height: (72/72);
 
     span {
@@ -292,19 +296,19 @@
   }
 
   &__case-text {
-    font-size: (28/1440)*100vw;
+    font-size: (28/1440) *100vw;
     line-height: (48/28);
 
     &:not(:first-child) {
-      margin-top: (35/1440)*100vw;
+      margin-top: (35/1440) *100vw;
     }
   }
 
   &__case-loader {
     position: fixed;
-    width: (60/1440)*100vw;
-    left: (44/1440)*100vw;
-    top: (68/900)*100vh;
+    width: (60/1440) *100vw;
+    left: (44/1440) *100vw;
+    top: (68/900) *100vh;
     cursor: pointer;
     z-index: 5;
     opacity: 0;

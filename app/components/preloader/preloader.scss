@@ -20,7 +20,7 @@
   &__title {
     font-size: 5vw;
     line-height: (92/72);
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     color: $color-grey;
     display: block;
@@ -31,13 +31,15 @@
       opacity: 0;
 
       @for $i from 1 to 4 {
+
         &:nth-child(#{$i}) {
-         transition-delay: #{0.1s * $i};
+          transition-delay: #{.1s * $i};
         }
       }
     }
 
     #{$b}.is-visible & {
+
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);
