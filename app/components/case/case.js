@@ -230,6 +230,7 @@ export function cases () {
         window.currentCase = window.currentCase+1 > (casesCount-1) ? 0 : window.currentCase+1;
         $(document).find('.case__main:last-child').siblings().remove();
         window.mySlider.slideTo(window.currentCase);
+        $('.lottie').removeClass('is-clickable');
 
         const
           caseID = window.currentCase,
@@ -276,6 +277,7 @@ export function cases () {
             $('.case').removeClass('is-loading');
             $('.case__main:eq(0)').removeClass('is-last');
             unfreeze();
+            $('.lottie').addClass('is-clickable');
           }, 5000);
 
           setTimeout(() => {

@@ -129,10 +129,22 @@ export function router () {
   });
 
   // Кейс
+  window.casesNames = [];
+  window.casesNamesSimple = [];
+
+  $.getJSON('/assets/json/cases.json', function (json) {
+    let objects = json;
+
+    $.each(objects, function (i) {
+      window.casesNames[`${objects[i].linkName}`] = true;
+      window.casesNamesSimple.push(objects[i].linkName);
+    });
+  });
+
   function logicCase () {
     page('/cases/:case/', function (e) {
-      if ($(document).find(`[data-case-name="${e.params.case}"]`).length > 0) {
-        loadCase($(document).find(`.slider__slide[data-case-name="${e.params.case}"]`).index());
+      if (window.casesNames[e.params.case]) {
+        loadCase(window.casesNamesSimple.indexOf(e.params.case));
         changeContainer('.js-page-case', 1000, 1000);
       } else {
         console.log(`Кейс ${e.params.case} не существует!`);
