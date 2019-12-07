@@ -81,6 +81,7 @@ export function slider() {
         spaceBetween: 0,
         centeredSlides: false,
         roundLengths: true,
+        effect: 'fade',
         freeMode: false,
         keyboard: {
           enabled: true,

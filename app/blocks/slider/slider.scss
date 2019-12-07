@@ -114,7 +114,7 @@
       }
     }
 
-    .js-slider.is-visible & {
+    .js-slider.is-visible .swiper-slide-active & {
 
       span {
         opacity: 1;
