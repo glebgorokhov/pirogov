@@ -132,6 +132,15 @@
     #{$b}__main.is-last & {
       transform: translate3d(0, 10vw, 0);
     }
+
+    #{$b}.is-preloaded & {
+      transition: transform 1s ease, opacity 1s ease !important;
+      opacity: 0;
+    }
+
+    .main__page_case.is-visible #{$b}.is-preloaded & {
+      opacity: 1;
+    }
   }
 
   &__description {

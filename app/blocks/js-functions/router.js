@@ -129,17 +129,6 @@ export function router () {
   });
 
   // Кейс
-  window.casesNames = [];
-  window.casesNamesSimple = [];
-
-  $.getJSON('/assets/json/cases.json', function (json) {
-    let objects = json;
-
-    $.each(objects, function (i) {
-      window.casesNames[`${objects[i].linkName}`] = true;
-      window.casesNamesSimple.push(objects[i].linkName);
-    });
-  });
 
   function logicCase () {
     page('/cases/:case/', function (e) {
@@ -164,10 +153,14 @@ export function router () {
     page('/contacts/', function (e) {
       contactsLogo();
       changeContainer('.js-page-contacts');
+      $('.case').addClass('is-preloaded');
     });
 
     page.exit('/contacts/', function (e, next) {
       contactsLogo(true);
+      setTimeout(() => {
+        $('.case').removeClass('is-preloaded');
+      }, 3000);
       next();
     });
   }
