@@ -2,39 +2,27 @@
 const $ = window.$;
 
 export function freeze() {
-  const h = $('html');
+  const h = $('.case');
 
-  if (h.css('position') !== 'fixed') {
-    const top = h.scrollTop() ? h.scrollTop() : $('body').scrollTop();
+  h.css('overflow-y', 'hidden');
 
-    if (window.innerWidth > h.width()) {
-      h.css('overflow-y', 'scroll');
-    }
-
-    h.css({
-      width: '100%',
-      height: '100%',
-      position: 'fixed',
-      top: -top,
-    });
-  }
+  h.css({
+    height: '100%',
+    'overflow-y': 'hidden',
+  });
 }
 
 export function unfreeze() {
-  const h = $('html');
+  const h = $('.case');
 
-  if (h.css('position') === 'fixed') {
-    h.css('position', 'static');
+  h.css({
+    height: '',
+    'overflow-y': '',
+  });
 
-    $('html, body').scrollTop(-parseInt(h.css('top'), 10));
-    h.css({
-      position: '',
-      width: '',
-      height: '',
-      top: '',
-      'overflow-y': '',
-    });
-  }
+  setTimeout(() => {
+    $('.main__page_case').scrollTop(0);
+  }, 1);
 }
 
 export function freezebuttons() {

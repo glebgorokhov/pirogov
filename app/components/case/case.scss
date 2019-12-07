@@ -58,7 +58,7 @@
     overflow: hidden;
     transition: transform $ease-long, opacity $ease-long;
 
-    &.is-hidden {
+    &.is-hidden, #{$b}.is-loading & {
       transform: translate3d(0, 2vw, 0);
       opacity: 0;
     }
@@ -86,6 +86,12 @@
 
     #{$b}.is-active & {
       opacity: 1;
+    }
+
+    #{$b}.is-loading & {
+      opacity: 0;
+      pointer-events: none;
+      transition-delay: 0s;
     }
 
     &:hover {
@@ -252,6 +258,10 @@
 
     img {
       max-width: 100%;
+
+      @media (min-width: 2500px) {
+        max-width: 100% !important;
+      }
     }
   }
 
@@ -287,6 +297,43 @@
 
     &:not(:first-child) {
       margin-top: (35/1440)*100vw;
+    }
+  }
+
+  &__case-loader {
+    position: fixed;
+    width: (60/1440)*100vw;
+    left: (44/1440)*100vw;
+    top: (68/900)*100vh;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity $ease-long;
+    font-size: 0;
+    pointer-events: none;
+
+    svg {
+      width: 100%;
+      position: absolute;
+      stroke-linecap: round;
+      fill: none;
+      stroke: red;
+      transform: rotate(-90deg);
+
+      circle {
+        stroke-dasharray: 180px;
+        stroke-dashoffset: -180px;
+        stroke: red;
+        transition: stroke-dashoffset 5s ease;
+      }
+    }
+
+    #{$b}.is-loading & {
+      opacity: 1;
+
+      svg circle {
+        stroke-dashoffset: 0;
+      }
     }
   }
 }

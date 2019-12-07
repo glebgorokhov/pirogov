@@ -49,6 +49,24 @@ export function slider() {
         slidesContent.append(html);
       });
 
+      let isMobile = false;
+      let isChangedToDesktop = true;
+      let mobileSlideHtml = `
+          <div class="slider__slide swiper-slide js-mobile-slide">
+              <div class="container">
+                  <h2 class="slider__title js-link">
+                    Подробное<br> описание<br> каждого<br> кейса<br> смотри<br> с десктопа
+                  </h2>
+              </div>
+          </div>
+        `;
+
+      if ($(window).width() < globalOptions.sizes.sm) {
+        slidesContent.append(mobileSlideHtml);
+        isMobile = true;
+        isChangedToDesktop = false;
+      }
+
       window.mySlider = new Swiper(block, {
         loop: false,
         speed: 1000,
@@ -96,6 +114,18 @@ export function slider() {
             }, 500);
           },
         },
+      });
+
+      $(window).resize(function () {
+        if ($(window).width() >= globalOptions.sizes.sm && !isChangedToDesktop) {
+          isChangedToDesktop = true;
+          $(document).find('.js-mobile-slide').remove();
+        } else if ($(window).width() < globalOptions.sizes.sm && isChangedToDesktop) {
+          slidesContent.append(mobileSlideHtml);
+          isChangedToDesktop = false;
+        }
+
+        mySlider.update();
       });
     });
   });

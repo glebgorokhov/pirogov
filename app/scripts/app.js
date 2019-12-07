@@ -19,6 +19,7 @@ import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
 import "../components/lottie/lottie";
 import {preloader} from "../components/preloader/preloader";
 import {cases} from "../components/case/case";
+import {contactsLayout} from "../pages/contacts/contacts";
 import {router} from "../blocks/js-functions/router";
 
 window.currentCase = 0;
@@ -32,6 +33,7 @@ $(() => {
   slider();
   preloader();
   cases();
+  contactsLayout();
   router();
 });
 /* eslint-enable */

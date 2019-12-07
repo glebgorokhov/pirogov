@@ -1,6 +1,8 @@
 /* eslint-disable */
 const $ = window.$;
 
+import {freeze, unfreeze} from "../../blocks/js-functions/freeze";
+
 // Мелкие части секций
 function createTitle (data) {
   let title = '';
@@ -68,7 +70,7 @@ function generateTextScreen (data) {
 function generatePicturesScreen (data) {
   const html = `
     <div class="case__picture">
-      <img src="${data.image}">
+      <img src="${data.image}" style="${data.imageWidth ? 'width: ' + data.imageWidth + 'px;' : ''}">
     </div>
   `;
 
@@ -219,21 +221,20 @@ export function cases () {
 
     sT > 100 ? line.addClass('is-hidden') : line.removeClass('is-hidden');
 
-    if ((sT + w.height()) === ($('.case').height())) {
-      console.log('Загрузка след. кейса');
-      $(document).find('.case__main:last-child').siblings().remove();
-
-      window.currentCase = window.currentCase+1 > (casesCount-1) ? 0 : window.currentCase+1;
-      window.mySlider.slideTo(window.currentCase);
+    if ((sT + w.height()) > ($('.case').height() - 1)) {
 
       // ##################
       function loadNextCase () {
         loadAllowed = false;
+        console.log('Загрузка след. кейса');
+        window.currentCase = window.currentCase+1 > (casesCount-1) ? 0 : window.currentCase+1;
+        $(document).find('.case__main:last-child').siblings().remove();
+        window.mySlider.slideTo(window.currentCase);
 
         const
           caseID = window.currentCase,
           url = '/assets/json/cases.json',
-          caseContent = $('.js-page-case .case__case-content');
+          caseContent = $(document).find('.js-page-case .case__case-content');
 
         $.getJSON(url, function (json) {
           const section = json[caseID].caseContent;
@@ -267,15 +268,19 @@ export function cases () {
           addLastSection();
 
           setTimeout(() => {
-            $('.main__page_case').scrollTop(0);
-            $('.case__main:eq(0)').removeClass('is-last');
+            $('.case').addClass('is-loading');
+            freeze();
           }, 0.1);
 
           setTimeout(() => {
-            $('.main__page_case').scrollTop(0);
+            $('.case').removeClass('is-loading');
+            $('.case__main:eq(0)').removeClass('is-last');
+            unfreeze();
+          }, 5000);
 
+          setTimeout(() => {
             loadAllowed = true;
-          }, 100);
+          }, 8000);
         });
       }
 

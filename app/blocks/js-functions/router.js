@@ -180,5 +180,13 @@ export function router () {
   $(document).on('click', '.contacts__link', function (e) {
     e.stopPropagation();
   });
+
+  $(window).resize(function () {
+    if ($(window).width() < globalOptions.sizes.sm) {
+      if ($('.js-page-case').hasClass('is-visible')) {
+        page('/cases/');
+      }
+    }
+  });
 }
 /* eslint-enable */

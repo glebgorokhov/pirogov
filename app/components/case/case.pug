@@ -11,6 +11,9 @@ mixin case(data)
   +b.case&attributes(attributes)
     +e.line
     +e.IMG.back(src="/assets/images/back.svg" data-link="/cases/").js-link
+    +e.case-loader.js-case-loader
+      svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60')
+        circle(cx="30" cy="30" r="29" stroke-width="1").js-circle-dot-percent
 
     +e.case-content
       each item in data

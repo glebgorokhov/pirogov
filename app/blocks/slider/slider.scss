@@ -72,6 +72,7 @@
     @include screen('sm') {
       font-size: (22/375)*100vw;
       line-height: (32/22);
+      pointer-events: none;
     }
 
     span {
