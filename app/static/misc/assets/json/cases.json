@@ -16,9 +16,9 @@
           ],
           "text": "Лучшая система лояльности 2019&nbsp;г. по&nbsp;версии Frank Banking Reward Award",
           "tags": [
-            "Rethinking CX/UX/UI"
+            "Rethinking CX/UX/UI © Home Credit Bank, 2017, Q4"
           ],
-          "year": "© Home Credit Bank, 2017, Q4",
+          "year": "",
           "video": "/assets/videos/Promo-Polza.mp4"
         }
       },
@@ -40,28 +40,45 @@
       },
       {
         "type": "singlePicture",
-        "backgroundColor": "#fff",
+        "backgroundColor": "#000",
         "content": {
           "image": "/assets/images/cases/Polza/01@2x.png",
-          "imageWidth": "1219"
+          "imageWidth": "700"
         }
       },
       {
-        "type": "texts",
-        "content": {
-          "title": "Новый бизнес-процесс",
-          "text": "Сначала оценили возможность нового Customer Expirience с&nbsp;бизнес-юнитом.",
-          "backgroundImage": "/assets/images/cases/Polza/02.jpg",
-          "backgroundSize": "cover",
-          "backgroundRepeat": "repeat"
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Новый бизнес-процесс",
+              "text": "Сначала оценили возможность реализации нового CX с&nbsp;бизнес-юнитом"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Polza/paper@2x.jpg",
+              "imageWidth": "403"
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
+        "backgroundColor": "white",
         "content": {
           "image": "/assets/images/cases/Polza/03@2x.jpg",
           "backgroundImage": "/assets/images/cases/Polza/04.png",
-          "backgroundSize": "auto"
+          "imageWidth": "788",
+          "backgroundSize": "100%",
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center"
         }
       },
       {
@@ -72,14 +89,16 @@
             "type": "singlePicture",
             "backgroundColor": "#000",
             "content": {
-              "image": "/assets/images/cases/Polza/05-1@2x.png"
+              "image": "/assets/images/cases/Polza/05-1@2x.png",
+              "imageWidth": "360"
             }
           },
           {
             "type": "singlePicture",
             "backgroundColor": "white",
             "content": {
-              "image": "/assets/images/cases/Polza/05-2@2x.png"
+              "image": "/assets/images/cases/Polza/05-2@2x.png",
+              "imageWidth": "340"
             }
           }
         ]
@@ -95,9 +114,9 @@
       },
       {
         "type": "singlePicture",
-        "backgroundColor": "#fff",
         "content": {
           "image": "/assets/images/cases/Polza/07@2x.png",
+          "imageWidth": "997",
           "backgroundImage": "/assets/images/cases/Polza/06.jpg",
           "backgroundSize": "cover"
         }
@@ -106,16 +125,17 @@
         "type": "singlePicture",
         "backgroundColor": "#fff",
         "content": {
-          "image": "/assets/images/cases/Polza/08@2x.gif"
+          "image": "/assets/images/cases/Polza/08@2x.gif",
+          "imageWidth": "520"
         }
       },
       {
         "type": "singlePicture",
-        "backgroundColor": "#D4D7DC",
         "content": {
           "image": "/assets/images/cases/Polza/09@2x.jpg",
+          "imageWidth": "634",
           "backgroundImage": "/assets/images/cases/Polza/09.jpg",
-          "backgroundSize": "auto"
+          "backgroundSize": "50%"
         }
       },
       {
@@ -131,12 +151,12 @@
         "type": "singlePicture",
         "backgroundColor": "white",
         "content": {
-          "image": "/assets/images/cases/Polza/10@2x.jpg"
+          "image": "/assets/images/cases/Polza/10@2x.jpg",
+          "imageWidth": "941"
         }
       },
       {
         "type": "texts",
-        "class": "case__screen_light",
         "backgroundColor": "black",
         "content": {
           "title": "<a href='http://polza.homecredit.ru/'>polza.homecredit.ru</a>",
@@ -147,7 +167,8 @@
         "type": "singlePicture",
         "backgroundColor": "#000",
         "content": {
-          "image": "/assets/images/cases/Polza/11@2x.png"
+          "image": "/assets/images/cases/Polza/11@2x.png",
+          "imageWidth": "808"
         }
       }
     ]
@@ -167,29 +188,19 @@
             "Екатеринбург",
             "в Каннах"
           ],
-          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "text": "Сайт, для&nbsp;презентации города Истокский на&nbsp;крупнейшем мировом конкурсе архитектуры MIPIM Awards",
           "tags": [
-            "UX-design",
-            "UI-design",
-            "game play",
-            "art direction"
+            "Проектирование, дизайн, брендинг © Studio-V, 2016 Q4"
           ],
-          "year": "2017, Q1",
-          "video": "/assets/videos/Case-Istokskiy.mp4"
+          "year": "",
+          "video": "/assets/videos/Istokskiy/Case-Istokskiy.mp4"
         }
       },
       {
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Polza-promo.mp4"
-        }
-      },
-      {
-        "type": "singlePicture",
-        "content": {
-          "image": "/assets/images/cases/1/06@2x.png",
-          "backgroundImage": "/assets/images/cases/1/pexels-photo-915972 1.jpg"
+          "video": "/assets/videos/Case-Istokskiy.mp4"
         }
       },
       {
@@ -197,8 +208,8 @@
         "class": "case__screen_light",
         "backgroundColor": "white",
         "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium."
+          "title": "УТП для инвесторов",
+          "text": "Стилизованное представление данных помогает привлечь внимание к&nbsp;важному, для&nbsp;продаж, информационному блоку."
         }
       },
       {
@@ -206,29 +217,71 @@
         "class": "case__screen_double",
         "content": [
           {
-            "type": "texts",
-            "class": "case__screen_light",
-            "backgroundColor": "white",
+            "type": "singlePicture",
+            "backgroundColor": "black",
             "content": {
-              "title": "Крутые иконки",
-              "text": "Нарисовал сэт иконок классных и красивых и в мок-ап айфона засунул"
+              "image": "/assets/images/cases/Istokskiy/utp-1.png",
+              "imageWidth": "300"
             }
           },
           {
             "type": "singlePicture",
-            "backgroundColor": "#2F80ED",
+            "backgroundColor": "white",
             "content": {
-              "image": "/assets/images/cases/1/06@2x (1).png"
+              "image": "/assets/images/cases/Istokskiy/utp-2.png",
+              "imageWidth": "300"
             }
           }
         ]
       },
       {
-        "type": "texts",
+        "type": "singlePicture",
+        "backgroundColor": "#000",
         "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
-          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+          "image": "/assets/images/cases/Istokskiy/infr.jpg",
+          "imageWidth": "753"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#000",
+        "content": {
+          "image": "/assets/images/cases/Istokskiy/Icons.png",
+          "imageWidth": "1111"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/Istokskiy/03@2x.jpg",
+          "imageWidth": "755"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Объем инвестиций 130&nbsp;млрд.&nbsp;руб.",
+          "text": "Скорее всего, такой «размах» и&nbsp;привел к&nbsp;остановке строительства объекта."
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#F3F8FA",
+        "content": {
+          "image": "/assets/images/cases/Istokskiy/04@2x.jpg",
+          "imageWidth": "915"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "<a href='http://istokskiy.ru/en/'> istokskiy.ru</a>",
+          "text": ""
         }
       }
     ]
@@ -315,6 +368,87 @@
           "title": "Спецификации для разработчиков",
           "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
           "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+        }
+      }
+    ]
+  },
+  {
+    "title": [
+      "Ваш терапевт.",
+      "IGLOO."
+    ],
+    "linkName": "Igloo",
+    "video": "/assets/videos/Promo-Dx.mp4",
+    "caseContent": [
+      {
+        "type": "mainScreen",
+        "content": {
+          "title": [
+            "Ваш терапевт.",
+            "IGLOO."
+          ],
+          "text": "Представьте, что ваш смартфон уже в&nbsp;2020 году сможет определить риск заболеваний. Если вы будете честны перед ним.",
+          "tags": [
+            "UX/UI, CustDev © ExperimentX, 2019, Q3"
+          ],
+          "year": "",
+          "video": "/assets/videos/Case-Dx.mp4"
+        }
+      },
+      {
+        "type": "video",
+        "class": "case__screen_video",
+        "content": {
+          "video": "/assets/videos/Case-Dx.mp4"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Что было сделано:",
+          "text": "— исследования (сбор информации о&nbsp;предметной области)<br/> — cx/ux-анализ первой версии приложения<br/> — userstory-проектирование<br/> — custdev<br/> — UX/UI-дизайн приложения"
+        }
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#000",
+        "content": {
+          "image": "/assets/images/cases/Igloo/screens.png",
+          "imageWidth": "989"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Polza/paper@2x.jpg",
+              "imageWidth": "403"
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "NDA",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "<a href='https://experimentx.co/'> © experimentx.co</a>",
+          "text": "До релиза продукта я&nbsp;не&nbsp;могу раскрывать все детали проекта, но&nbsp;с&nbsp;некоторыми кейсами можно ознакомиться, встретившись со&nbsp;мной лично или&nbsp;оставив запрос на&nbsp;дэмо на&nbsp;сайте компании."
         }
       }
     ]

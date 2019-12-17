@@ -285,7 +285,6 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
-    z-index: -1;
     background-size: cover;
     background-position: center;
   }
@@ -293,11 +292,13 @@
   &__texts {
     display: block;
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   &__case-title {
-    font-size: (62/1440) *100vw;
-    line-height: (72/72);
+    font-size: (38/1440) *100vw;
+    line-height: (48/38);
 
     span {
       display: block;
@@ -305,11 +306,11 @@
   }
 
   &__case-text {
-    font-size: (28/1440) *100vw;
-    line-height: (48/28);
+    font-size: (18/1440) *100vw;
+    line-height: (28/18);
 
     &:not(:first-child) {
-      margin-top: (35/1440) *100vw;
+      margin-top: (29/1440) *100vw;
     }
   }
 

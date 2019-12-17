@@ -79,7 +79,7 @@ function generatePicturesScreen (data) {
 
 function generateScreenBg (data) {
   const html = `
-    <div class="case__background-image" style="background-image: url(${data.backgroundImage}); ${data.backgroundSize ? ('background-size: ' + data.backgroundSize + ';') : ''} ${data.backgroundRepeat ? ('background-repeat: ' + data.backgroundRepeat + ';') : ''}"></div>
+    <div class="case__background-image" style="background-image: url(${data.backgroundImage}); ${data.backgroundSize ? ('background-size: ' + data.backgroundSize + ';') : ''} ${data.backgroundRepeat ? ('background-repeat: ' + data.backgroundRepeat + ';') : ''} ${data.backgroundPosition ? ('background-position: ' + data.backgroundPosition + ';') : ''}"></div>
   `;
 
   return html;
