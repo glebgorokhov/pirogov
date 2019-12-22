@@ -100,9 +100,9 @@ export function router () {
       preloader.addClass('is-loading');
     }, 3000);
 
-    setTimeout(() => {
-      window.logoAnimation.pause();
-    }, 5000);
+    // setTimeout(() => {
+    //   window.logoAnimation.pause();
+    // }, 5000);
 
     setTimeout(() => {
       preloader.addClass('is-loaded');

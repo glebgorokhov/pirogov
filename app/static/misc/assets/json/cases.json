@@ -16,9 +16,9 @@
           ],
           "text": "Лучшая система лояльности 2019&nbsp;г. по&nbsp;версии Frank Banking Reward Award",
           "tags": [
-            "Rethinking CX/UX/UI © Home Credit Bank, 2017, Q4"
+            ""
           ],
-          "year": "",
+          "year": "Rethinking CX/UX/UI © Home Credit Bank, 2017, Q4",
           "video": "/assets/videos/Promo-Polza.mp4"
         }
       },
@@ -30,13 +30,28 @@
         }
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "UX-аналитика",
-          "text": "На начальном этапе были определены основные проблемы существующей дизайн-концепции: <br/>1. Слишком много уделено внимания поиску;<br/>2. Непонятно, к&nbsp;чему относится банковская карта;<br/>3. Баллы — главная информация, а&nbsp;она спрятана внизу экрана;<br/>4. Плохо сверстан блок с&nbsp;категориями фильтра, что нигативно сказывается на&nbsp;эргономике интерфейса."
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "UX-аналитика существующего интерфейса",
+              "text": "1. Слишком большой акцент на&nbsp;поиске <br/>2. Баллы&nbsp;— главная информация, а&nbsp;она спрятана внизу экрана <br/>3. Нечитабильный фильтр акций     "
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
@@ -104,14 +119,30 @@
         ]
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "+12 к просмотру рекламы, за&nbsp;счёт рекомендуемых акций",
-          "text": ""
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "+12% к просмотру рекламы, за&nbsp;счёт рекомендуемых акций",
+              "text": ""
+            }
+          }
+        ]
       },
+
       {
         "type": "singlePicture",
         "content": {
@@ -139,13 +170,28 @@
         }
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "Мобильный трафик — 34%",
-          "text": ""
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Мобильный трафик — 34%",
+              "text": ""
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
@@ -159,8 +205,8 @@
         "type": "texts",
         "backgroundColor": "black",
         "content": {
-          "title": "<a href='http://polza.homecredit.ru/'>polza.homecredit.ru</a>",
-          "text": "К сожалению, личный кабинет доступен только клиентам Хоум Кредит Банка. Закажите карту и&nbsp;наслаждайтесь действительно высоким cashback'ом и&nbsp;понятным интерфейсом :) "
+          "title": "Закажите карту и&nbsp;наслаждайтесь действительно высоким cashback'ом и&nbsp;понятным интерфейсом :) ",
+          "text": "<a href='http://polza.homecredit.ru/' target='_blank'>polza.homecredit.ru</a> "
         }
       },
       {
@@ -188,12 +234,12 @@
             "Екатеринбург",
             "в Каннах"
           ],
-          "text": "Сайт, для&nbsp;презентации города Истокский на&nbsp;крупнейшем мировом конкурсе архитектуры MIPIM Awards",
+          "text": "Сайт, для&nbsp;презентации ЖК «Истокский» на&nbsp;крупнейшем мировом конкурсе архитектуры MIPIM Awards",
           "tags": [
-            "Проектирование, дизайн, брендинг © Studio-V, 2016 Q4"
+            ""
           ],
-          "year": "",
-          "video": "/assets/videos/Istokskiy/Case-Istokskiy.mp4"
+          "year": "UX, UI, брендинг © Studio-V, 2015 Q4",
+          "video": "/assets/videos/Promo-Istokskiy.mp4"
         }
       },
       {
@@ -204,13 +250,28 @@
         }
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "УТП для инвесторов",
-          "text": "Стилизованное представление данных помогает привлечь внимание к&nbsp;важному, для&nbsp;продаж, информационному блоку."
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "УТП для инвесторов",
+              "text": "Стилизованное представление данных помогает привлечь внимание к&nbsp;важному, для&nbsp;продаж, информационному блоку."
+            }
+          }
+        ]
       },
       {
         "type": "doubleSide",
@@ -259,13 +320,28 @@
         }
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "Объем инвестиций 130&nbsp;млрд.&nbsp;руб.",
-          "text": "Скорее всего, такой «размах» и&nbsp;привел к&nbsp;остановке строительства объекта."
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "В основу UI сайта легла <a href='http://www.studio-v.ru/folio/istokskiy-logo/' target='_blank'>айдентика</a> жилого комплекса",
+              "text": "Её разработал тоже я"
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
@@ -280,7 +356,7 @@
         "class": "case__screen_light",
         "backgroundColor": "white",
         "content": {
-          "title": "<a href='http://istokskiy.ru/en/'> istokskiy.ru</a>",
+          "title": "<a href='http://istokskiy.ru/en/' target='_blank'> istokskiy.ru</a>",
           "text": ""
         }
       }
@@ -301,14 +377,11 @@
             "Терминал",
             "финпродуктов"
           ],
-          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "text": "От терминала по&nbsp;приёму монет до&nbsp;киоска финансовых услуг",
           "tags": [
-            "UX-design",
-            "UI-design",
-            "game play",
-            "art direction"
+            ""
           ],
-          "year": "2017, Q1",
+          "year": "UX/UI, Art direction 2018, Q1",
           "video": "/assets/videos/Promo-ATM.mp4"
         }
       },
@@ -316,7 +389,7 @@
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Polza-promo.mp4"
+          "video": "/assets/videos/Promo-ATM.mp4"
         }
       },
       {
@@ -352,14 +425,14 @@
             "art direction"
           ],
           "year": "2017, Q1",
-          "video": "/assets/videos/Promo-ATM.mp4"
+          "video": "/assets/videos/Promo-PIK.mp4"
         }
       },
       {
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Polza-promo.mp4"
+          "video": "/assets/videos/Promo-PIK.mp4"
         }
       },
       {
@@ -389,9 +462,9 @@
           ],
           "text": "Представьте, что ваш смартфон уже в&nbsp;2020 году сможет определить риск заболеваний. Если вы будете честны перед ним.",
           "tags": [
-            "UX/UI, CustDev © ExperimentX, 2019, Q3"
+            ""
           ],
-          "year": "",
+          "year": "UX/UI, CustDev © ExperimentX, 2019, Q3",
           "video": "/assets/videos/Case-Dx.mp4"
         }
       },
@@ -403,13 +476,28 @@
         }
       },
       {
-        "type": "texts",
-        "class": "case__screen_light",
-        "backgroundColor": "white",
-        "content": {
-          "title": "Что было сделано:",
-          "text": "— исследования (сбор информации о&nbsp;предметной области)<br/> — cx/ux-анализ первой версии приложения<br/> — userstory-проектирование<br/> — custdev<br/> — UX/UI-дизайн приложения"
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Что было сделано:",
+              "text": "— исследование &nbsp;предметной области)<br/> — cx/ux-анализ первой версии приложения<br/> — userstory-проектирование<br/> — custdev<br/> — UX/UI-дизайн приложения"
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
@@ -427,17 +515,15 @@
             "type": "singlePicture",
             "backgroundColor": "black",
             "content": {
-              "image": "/assets/images/cases/Polza/paper@2x.jpg",
-              "imageWidth": "403"
+              "image": "/assets/images/cases/Igloo/igloo-logo.gif",
+              "imageWidth": "200"
             }
           },
           {
-            "type": "texts",
-            "class": "case__screen_light",
+            "type": "singlePicture",
             "backgroundColor": "white",
             "content": {
-              "title": "NDA",
-              "text": ""
+              "image": "/assets/images/cases/Igloo/igloo-chat.png"
             }
           }
         ]
@@ -447,8 +533,8 @@
         "class": "case__screen_light",
         "backgroundColor": "white",
         "content": {
-          "title": "<a href='https://experimentx.co/'> © experimentx.co</a>",
-          "text": "До релиза продукта я&nbsp;не&nbsp;могу раскрывать все детали проекта, но&nbsp;с&nbsp;некоторыми кейсами можно ознакомиться, встретившись со&nbsp;мной лично или&nbsp;оставив запрос на&nbsp;дэмо на&nbsp;сайте компании."
+          "title": "Все детали проекта будут опубликованы после его релиза",
+          "text": "NDA <a href='https://experimentx.co/' target='_blank'> © experimentx.co</a>"
         }
       }
     ]
