@@ -79,7 +79,9 @@ function generatePicturesScreen (data) {
 
 function generateScreenBg (data) {
   const html = `
-    <div class="case__background-image" style="background-image: url(${data.backgroundImage}); ${data.backgroundSize ? ('background-size: ' + data.backgroundSize + ';') : ''} ${data.backgroundRepeat ? ('background-repeat: ' + data.backgroundRepeat + ';') : ''} ${data.backgroundPosition ? ('background-position: ' + data.backgroundPosition + ';') : ''}"></div>
+    <div class="case__background-image">
+      <div class="case__background-image_container" style="background-image: url(${data.backgroundImage}); ${data.backgroundSize ? ('background-size: ' + data.backgroundSize + ';') : ''} ${data.backgroundRepeat ? ('background-repeat: ' + data.backgroundRepeat + ';') : ''} ${data.backgroundPosition ? ('background-position: ' + data.backgroundPosition + ';') : ''}"></div>
+    </div>
   `;
 
   return html;
@@ -220,6 +222,17 @@ export function cases () {
       line = $(document).find('.case__line');
 
     sT > 100 ? line.addClass('is-hidden') : line.removeClass('is-hidden');
+
+    //
+    $(this).find('.case__background-image').each(function () {
+      const cont = $(this).find('.case__background-image_container');
+
+      if (cont.hasClass('is-active')) return;
+
+      if ($(this).offset().top < $(window).height()/2) {
+        cont.addClass('is-active');
+      }
+    });
 
     if ((sT + w.height()) > ($('.case').height() - 1)) {
 

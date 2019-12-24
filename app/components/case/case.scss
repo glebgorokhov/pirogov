@@ -285,8 +285,22 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
+
+    &_container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.2);
+      transition: transform 2s ease;
+
+      &.is-active {
+        transform: scale(1);
+      }
+    }
   }
 
   &__texts {
