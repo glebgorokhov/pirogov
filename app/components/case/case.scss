@@ -125,17 +125,27 @@
     z-index: 2;
     transition: transform 1s ease;
 
-    span {
-      display: block;
-    }
-
     #{$b}__main.is-last & {
-      transform: translate3d(0, 10vw, 0);
+      span {
+        transform: translate3d(0, 10vw, 0);
+      }
     }
 
     #{$b}.is-preloaded & {
-      transition: transform 1s ease, opacity 1s ease !important;
+      transition: opacity 1s ease !important;
       opacity: 0;
+    }
+
+    span {
+      display: block;
+      transition: transform 1s ease;
+
+      @for $i from 1 to 7 {
+
+        &:nth-child(#{$i}) {
+          transition-delay: #{.1s * $i} !important;
+        }
+      }
     }
 
     .main__page_case.is-visible #{$b}.is-preloaded & {

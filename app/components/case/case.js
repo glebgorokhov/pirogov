@@ -137,7 +137,7 @@ function generateDoubleSection (data) {
 function posDifference (id, action) {
   const
     titleSlide = $(`.slider__title:eq(${id})`),
-    titleCase = $(document).find('.case__title:eq(0)');
+    titleCase = $(document).find('.case__title:eq(0) span');
 
   const
     posOne = titleSlide.offset().top,
