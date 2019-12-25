@@ -304,12 +304,26 @@
         }
       },
       {
-        "type": "singlePicture",
-        "backgroundColor": "#000",
-        "content": {
-          "image": "/assets/images/cases/Istokskiy/Icons.png",
-          "imageWidth": "1111"
-        }
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Istokskiy/Icons.png",
+              "imageWidth": "450"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Istokskiy/Icon-big.png",
+              "imageWidth": "272"
+            }
+          }
+        ]
       },
       {
         "type": "singlePicture",
@@ -343,6 +357,31 @@
           }
         ]
       },
+
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Istokskiy/Logo.png",
+              "imageWidth": "300"
+          }
+          }
+        ]
+      },
+
       {
         "type": "singlePicture",
         "backgroundColor": "#F3F8FA",
@@ -404,8 +443,8 @@
   },
   {
     "title": [
-      "ЖКХ",
-      "по-новому"
+      "Трансформация",
+      "ЖКХ-сектора"
     ],
     "linkName": "atmTwo",
     "video": "/assets/videos/Promo-PIK.mp4",
@@ -414,17 +453,14 @@
         "type": "mainScreen",
         "content": {
           "title": [
-            "ЖКХ",
-            "по-новому"
+            "Трансформация",
+            "ЖКХ-сектора"
           ],
-          "text": "Статистика посещения ЛК показывает, что 24% клиентов входит в личный кабинет с мобильных телефонов, а это больше 2 000 пользователей в сутки",
+          "text": "Задача — развернуть ЖКХ-сектор лицом к&nbsp;жителям. Опираться на&nbsp;опыт внедрения MVP «Личный кабинет жителя». Создать дизайн-стратегию для&nbsp;развития комплексного продукта.",
           "tags": [
-            "UX-design",
-            "UI-design",
-            "game play",
-            "art direction"
+            ""
           ],
-          "year": "2017, Q1",
+          "year": "Аналитика, CX/UX/UI, Арт-дирекшн © ПИК-Комфорт, 2019, Q1",
           "video": "/assets/videos/Promo-PIK.mp4"
         }
       },
@@ -494,7 +530,7 @@
             "backgroundColor": "white",
             "content": {
               "title": "Что было сделано:",
-              "text": "— исследование &nbsp;предметной области)<br/> — cx/ux-анализ первой версии приложения<br/> — userstory-проектирование<br/> — custdev<br/> — UX/UI-дизайн приложения"
+              "text": "— исследование &nbsp;предметной области<br/> — cx/ux-анализ первой версии приложения<br/> — userstory-проектирование<br/> — custdev<br/> — UX/UI-дизайн приложения"
             }
           }
         ]
