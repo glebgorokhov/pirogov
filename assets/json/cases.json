@@ -26,7 +26,8 @@
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Case-Polza.mp4"
+          "video": "/assets/videos/Case-Polza.mp4",
+          "videoWidth": "200"
         }
       },
       {
@@ -416,11 +417,11 @@
             "Терминал",
             "финпродуктов"
           ],
-          "text": "От терминала по&nbsp;приёму монет до&nbsp;киоска финансовых услуг",
+          "text": "От терминала по&nbsp;приёму монет до&nbsp;киоска финансовых услуг за&nbsp;3&nbsp;месяца",
           "tags": [
             ""
           ],
-          "year": "UX/UI, Art direction 2018, Q1",
+          "year": "UX-консалтинг, UI-дизайн, Арт-дирекшн © Coincom, 2018 Q2",
           "video": "/assets/videos/Promo-ATM.mp4"
         }
       },
@@ -428,15 +429,217 @@
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Promo-ATM.mp4"
+          "video": "/assets/videos/Case-ATM.mp4"
         }
       },
       {
-        "type": "texts",
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Начало и брифинг",
+              "text": "На&nbsp;входе были работающие терминалы MVP и&nbsp;прототипы, описывающие функции продукта. Плюс пожелание, что дизайн должен быть дружественным, но&nbsp;в&nbsp;тоже время показывать, что&nbsp;работать с&nbsp;терминалом безопасно."
+            }
+          }
+        ]
+      },
+      {
+        "type": "video",
         "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
-          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+          "video": "/assets/videos/Promo-ATM.mp4",
+          "imageWidth": "634",
+          "backgroundImage": "/assets/images/cases/ATM/bg.jpg",
+          "backgroundSize": "cover"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "Анализ удачных решений",
+              "text": "и&nbsp;работа над&nbsp;принципами построения нового интерфейса"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "#000",
+        "content": {
+          "image": "/assets/images/cases/ATM/Refs.jpg",
+          "imageWidth": "1560"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "Суть концепции",
+              "text": "Мы должны не&nbsp;просто закрыть потребности пользователей, а&nbsp;влюбить их&nbsp;в&nbsp;сам процесс взаимодействия с&nbsp;терминалом. Для&nbsp;этого используем яркие цвета, анимацию, иллюстрации и&nbsp;супер UX."
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "black",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "video",
+        "content": {
+          "video": "/assets/images/cases/ATM/Steps.mp4",
+          "videoWidth": "634",
+          "backgroundColor": "black"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "Иллюстрации и&nbsp;анимированные инструкции",
+              "text": "от&nbsp;иллюстратора <a href='https://www.facebook.com/profile.php?id=100022514774173/' target='_blank'>Ильи Сергеева</a>",
+              "backgroundImage": "/assets/images/cases/ATM/bg-ill.jpg",
+              "backgroundSize": "cover"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/ATM/Gif-ill.gif",
+              "imageWidth": "500"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/ATM/Icons.png",
+          "imageWidth": "750"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Использование иллюстраций в&nbsp;интерфейсе",
+              "text": "и&nbsp;другие экраны терминала"
+            }
+          },
+          {
+            "type": "texts",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/ATM/Screen-1.png",
+              "imageWidth": "400"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "black",
+        "content": {
+          "image": "/assets/images/cases/ATM/Gif-ill.gif",
+          "imageWidth": "200"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/ATM/ATM-1.png",
+              "imageWidth": "312"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/ATM/ATM-2.png",
+              "imageWidth": "250"
+            }
+          }
+        ]
+      },
+      {
+        "type": "texts",
+        "class": "case__screen_light",
+        "backgroundColor": "white",
+        "content": {
+          "title": "Результат: +10%&nbsp;к&nbsp;конверсии, после запуска нового интерфейса. Окупаемость 100%&nbsp;инвестиций в&nbsp;дизайн&nbsp;—1&nbsp;месяц.",
+          "text": "Карта «живых» терминалов <a href='https://coincom.ru/' target='_blank'>на сайте компании</a>."
         }
       }
     ]
@@ -446,7 +649,7 @@
       "Трансформация",
       "ЖКХ-сектора"
     ],
-    "linkName": "atmTwo",
+    "linkName": "Pik",
     "video": "/assets/videos/Promo-PIK.mp4",
     "caseContent": [
       {
@@ -472,13 +675,470 @@
         }
       },
       {
-        "type": "texts",
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Шаг 1",
+              "text": "Research предметной области и&nbsp;конкурентной среды, составление матрицы плюсов и&nbsp;минусов конкурентных решений и&nbsp;прорисовка архитекруты будущего приложения"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
         "content": {
-          "title": "Спецификации для разработчиков",
-          "text": "Комментарии в Zeplin по верстке элементов, GUI элементов сайта, GUI по анимации, кликабельные Invision-прототипы, руководство контент-менеджера.<br> Немного подробнее написал о спецификациях на Medium.",
-          "backgroundImage": "/assets/images/cases/1/Group 2.1.jpg"
+          "image": "/assets/images/cases/Pik/Whimsical.jpg",
+          "imageWidth": "700"
         }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Бумажные прототипы экранов и&nbsp;утверждение общей UX-концепции приложения",
+              "text": "Шаг 2"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Pik/Pic-1.jpg",
+              "imageWidth": "400"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "Wireframes",
+              "text": "Шаг 3"
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "black",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "black",
+        "content": {
+          "image": "/assets/images/cases/Pik/Wireframes.png",
+          "imageWidth": "1000"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Draft visual concept",
+              "text": "Шаг 4"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/Pik/Draft.jpg",
+          "imageWidth": "1000"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Итоговый дизайн",
+              "text": "Первоначальная концепция показала вектор визуального дизайна приложения. Итоговый вариант, конечно&nbsp;же, получился намного круче первого видения."
+            }
+          }
+        ]
+      },
+      {
+        "type": "video",
+        "content": {
+          "backgroundImage": "/assets/images/cases/Pik/Mockup.png",
+          "backgroundSize": "cover"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Dash-i.png",
+              "imageWidth": "300"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Dash-a.png",
+              "imageWidth": "300"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Оплата",
+              "text": "Квитанции, по&nbsp;которым понятно за&nbsp;что&nbsp;платишь"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Pik/Pic-1.jpg",
+              "imageWidth": "400"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "black",
+        "content": {
+          "image": "/assets/images/cases/Pik/Draft.jpg",
+          "imageWidth": "300"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "#4485EB",
+            "content": {
+              "image": "/assets/images/cases/Pik/Paid.png",
+              "imageWidth": "350"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Lime.gif",
+              "imageWidth": "275"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Показания сётчиков",
+              "text": "и цветовая идентификация типа прибора учёта"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Paid.png",
+              "imageWidth": "350"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Lime.gif",
+              "imageWidth": "275"
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/Pik/i-a.png",
+          "imageWidth": "222"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Платформенные отличияи и&nbsp;адаптация дизайна",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "black",
+        "content": {
+          "image": "/assets/images/cases/Pik/Girl.png",
+          "imageWidth": "1100"
+        }
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "backgroundColor": "black",
+            "content": {
+              "title": "Морфинг экранов оплаты",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "black",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Pik/InvoiceOpen-iOS.gif",
+              "imageWidth": "200"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Pik/InvoiceOpen-Android.gif",
+              "imageWidth": "200"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "singlePicture",
+            "backgroundColor": "black",
+            "content": {
+              "image": "/assets/images/cases/Pik/Ipu-i.png",
+              "imageWidth": "150"
+            }
+          },
+          {
+            "type": "singlePicture",
+            "backgroundColor": "white",
+            "content": {
+              "image": "/assets/images/cases/Pik/Ipu-a.png",
+              "imageWidth": "150"
+            }
+          }
+        ]
+      },
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "",
+              "text": ""
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Иконографика",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "type": "singlePicture",
+        "backgroundColor": "white",
+        "content": {
+          "image": "/assets/images/cases/Pik/Icons.jpg",
+          "imageWidth": "550"
+        }
+      },
+
+
+
+
+      {
+        "type": "doubleSide",
+        "class": "case__screen_double",
+        "content": [
+          {
+            "type": "texts",
+            "content": {
+              "title":" ",
+              "text": " ",
+              "backgroundImage": "/assets/images/cases/Pik/Map.jpg",
+              "backgroundSize": "cover"
+            }
+          },
+          {
+            "type": "texts",
+            "class": "case__screen_light",
+            "backgroundColor": "white",
+            "content": {
+              "title": "Спецификации разработки",
+              "text": "— Логика переходов между экранами; <br/>— описания анимаций и&nbsp;ключевых кейсов; <br/>— гайды верстки интерфейса; <br/>— карта пуш-уведомлений."
+            }
+          }
+        ]
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ]
   },
   {
