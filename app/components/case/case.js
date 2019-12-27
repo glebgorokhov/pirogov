@@ -49,7 +49,7 @@ function generateMainScreen (data) {
 function generateVideoScreen (data) {
   const html = `
      <div class="case__video">
-       <video src="${data.video}" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto"></video>
+       <video src="${data.video}" style="${data.videoWidth ? 'max-width: ' + data.videoWidth + 'px;' : ''}" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto"></video>
      </div>
   `;
 
