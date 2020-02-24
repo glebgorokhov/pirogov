@@ -6,15 +6,19 @@
   z-index: 999999999999;
   font-size: 0;
   pointer-events: none;
+  transition: opacity $ease-main;
 
   &.is-clickable {
     cursor: pointer;
-    transition: opacity $ease-main;
     pointer-events: all;
 
     &:hover {
       opacity: .85;
     }
+  }
+
+  &.is-hidden {
+    opacity: 0;
   }
 
   $b: &;

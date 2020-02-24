@@ -39,7 +39,7 @@ export function slider() {
                   <h2 class="slider__title js-link" data-link="/cases/${objects[i].linkName}/" data-case-id="${objects[i].linkName}">
                     ${createTitle()}
                   </h2>
-                  <div class="slider__video">
+                  <div class="slider__video js-link" data-link="/cases/${objects[i].linkName}/">
                       <div class="slider__video-wrapper">
                         <video class="js-slide-video" src="${objects[i].video}" muted="muted" playsinline="playsinline" preload="auto"></video>
                       </div>
@@ -50,24 +50,6 @@ export function slider() {
 
         slidesContent.append(html);
       });
-
-      let isMobile = false;
-      let isChangedToDesktop = true;
-      let mobileSlideHtml = `
-          <div class="slider__slide swiper-slide js-mobile-slide">
-              <div class="container">
-                  <h2 class="slider__title js-link">
-                    Подробное<br> описание<br> каждого<br> кейса<br> смотри<br> с десктопа
-                  </h2>
-              </div>
-          </div>
-        `;
-
-      if ($(window).width() < globalOptions.sizes.sm) {
-        slidesContent.append(mobileSlideHtml);
-        isMobile = true;
-        isChangedToDesktop = false;
-      }
 
       window.mySlider = new Swiper(block, {
         loop: false,
@@ -85,6 +67,7 @@ export function slider() {
         freeMode: false,
         keyboard: {
           enabled: true,
+          onlyInViewport: true,
         },
         mousewheel: {
           releaseOnEdges: true,
@@ -108,6 +91,20 @@ export function slider() {
         on: {
           init: function () {
             this.slideTo(1);
+
+            document.onkeydown = checkKey;
+
+            const sw = this;
+
+            function checkKey(e) {
+              e = e || window.event;
+
+              if (e.keyCode == '38') {
+                sw.slidePrev();
+              } else if (e.keyCode == '40') {
+                sw.slideNext();
+              }
+            }
           },
           slideChangeTransitionStart: function () {
             $(document).find('.swiper-slide-active video')[0].currentTime = 0;
@@ -117,18 +114,6 @@ export function slider() {
             }, 500);
           },
         },
-      });
-
-      $(window).resize(function () {
-        if ($(window).width() >= globalOptions.sizes.sm && !isChangedToDesktop) {
-          isChangedToDesktop = true;
-          $(document).find('.js-mobile-slide').remove();
-        } else if ($(window).width() < globalOptions.sizes.sm && isChangedToDesktop) {
-          slidesContent.append(mobileSlideHtml);
-          isChangedToDesktop = false;
-        }
-
-        mySlider.update();
       });
     });
   });

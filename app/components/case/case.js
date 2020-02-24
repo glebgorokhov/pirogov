@@ -58,7 +58,7 @@ function generateVideoScreen (data) {
 
 function generateTextScreen (data) {
   const html = `
-     <div class="case__texts">
+     <div class="case__texts ${data.centeredText ? 'case__texts_centered' : ''}">
          <h2 class="case__case-title">${data.title}</h2>
          <p class="case__case-text">${data.text}</p>
      </div>
@@ -223,7 +223,18 @@ export function cases () {
 
     sT > 100 ? line.addClass('is-hidden') : line.removeClass('is-hidden');
 
-    //
+    // Анимация текстов
+    $(this).find('.case__case-title, .case__case-text').each(function () {
+      const cont = $(this);
+
+      if (cont.hasClass('is-active')) return;
+
+      if ($(this).offset().top < $(window).height()*0.9) {
+        cont.addClass('is-active');
+      }
+    });
+
+    // Анимация для бэкграундов
     $(this).find('.case__background-image').each(function () {
       const cont = $(this).find('.case__background-image_container');
 
@@ -234,6 +245,7 @@ export function cases () {
       }
     });
 
+    // Когда доскроллили кейс до конца
     if ((sT + w.height()) > ($('.case').height() - 1)) {
 
       // ##################
@@ -243,7 +255,7 @@ export function cases () {
         window.currentCase = window.currentCase+1 > (casesCount-1) ? 0 : window.currentCase+1;
         $(document).find('.case__main:last-child').siblings().remove();
         window.mySlider.slideTo(window.currentCase);
-        $('.lottie').removeClass('is-clickable');
+        $('.lottie').removeClass('is-clickable').addClass('is-hidden');
 
         const
           caseID = window.currentCase,
@@ -290,7 +302,7 @@ export function cases () {
             $('.case').removeClass('is-loading');
             $('.case__main:eq(0)').removeClass('is-last');
             unfreeze();
-            $('.lottie').addClass('is-clickable');
+            $('.lottie').addClass('is-clickable').removeClass('is-hidden');
           }, 5000);
 
           setTimeout(() => {

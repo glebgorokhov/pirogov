@@ -37,6 +37,10 @@
     #{$b}.is-visible .swiper-slide-active & {
       opacity: .4;
       transition-delay: .7s;
+
+      @include screen('sm') {
+        opacity: 1;
+      }
     }
 
     .is-case-open & {
@@ -73,7 +77,6 @@
     @include screen('sm') {
       font-size: (22/375) *100vw;
       line-height: (32/22);
-      pointer-events: none;
     }
 
     span {
@@ -91,9 +94,9 @@
         opacity: .5;
         transition: transform $ease-main, opacity $ease-main;
 
-        @include screen('sm') {
+        //@include screen('sm') {
           display: none;
-        }
+        //}
       }
     }
 
@@ -120,7 +123,13 @@
       span {
         opacity: 1;
         transform: translate3d(0, 0, 0);
-        transition-delay: .7s;
+
+        @for $i from 1 to 4 {
+
+          &:nth-child(#{$i}) {
+            transition-delay: #{.1s * $i + .7s};
+          }
+        }
       }
     }
 

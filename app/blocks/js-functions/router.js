@@ -39,15 +39,24 @@ function changeContainer (selector, delayOne, delayTwo) {
     $('.js-slider').addClass('is-visible');
     if (window.mySlider.params) {
       window.mySlider.slideTo(window.currentCase);
+      window.mySlider.keyboard.enable();
     }
     $(document).find('.case').removeClass('is-active');
   } else {
     $('.js-slider').removeClass('is-visible');
+    if (window.mySlider.params) {
+      window.mySlider.keyboard.disable();
+    }
   }
 
   // Переход в контакты
   if (selector === '.js-page-contacts') {
     $('.js-contacts').addClass('is-visible');
+
+    setTimeout(() => {
+      $(document).find('.case.is-active').removeClass('is-active');
+    }, 1000);
+
     if (!isMainPage && !isPageChanged) window.logoToFirstState();
   } else {
     $('.js-contacts').removeClass('is-visible');
@@ -186,14 +195,6 @@ export function router () {
 
   $(document).on('click', '.contacts__link', function (e) {
     e.stopPropagation();
-  });
-
-  $(window).resize(function () {
-    if ($(window).width() < globalOptions.sizes.sm) {
-      if ($('.js-page-case').hasClass('is-visible')) {
-        page('/cases/');
-      }
-    }
   });
 }
 /* eslint-enable */

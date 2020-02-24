@@ -23,8 +23,9 @@
   }
 
   &__main-video {
-    width: 70vw;
-    height: 70vh;
+    @include rule(width, (xl: 70vw, sm: 80vw));
+    @include rule(height, (xl: 70vh, sm: 80vh));
+
     font-size: 0;
     opacity: 0;
     transition: opacity $ease-long;
@@ -32,7 +33,7 @@
     @include center-block;
 
     #{$b}__main.is-last & {
-      opacity: .4;
+      @include rule(opacity, (xl: .4, sm: 1));
     }
   }
 
@@ -58,6 +59,8 @@
     height: (140/900) *100vh;
     overflow: hidden;
     transition: transform $ease-long, opacity $ease-long;
+
+    @include rule(display, (sm: none));
 
     &.is-hidden, #{$b}.is-loading & {
       transform: translate3d(0, 2vw, 0);
@@ -85,6 +88,8 @@
     opacity: 0;
     transition: transform $ease-main, opacity $ease-long 1s;
 
+    @include rule(display, (sm: none));
+
     #{$b}.is-active & {
       opacity: 1;
     }
@@ -105,8 +110,8 @@
   &__main {
     min-height: 100vh;
     box-sizing: border-box;
-    padding-top: 25vh;
-    padding-bottom: (70/900) *100vh;
+    @include rule(padding-top, (xl: 25vh, sm: 10vw));
+    @include rule(padding-bottom, (xl: (70/900) *100vh, sm: 10vw));
     display: flex;
     position: relative;
 
@@ -117,17 +122,20 @@
   }
 
   &__title {
-    font-size: (72/1440) *100vw;
-    line-height: (92/72);
+    @include rule(font-size, (xl: (72/1440) *100vw, sm: 5.86667vw));
+    @include rule(line-height, (xl: (92/72), sm: 1.45455));
+
     letter-spacing: .1em;
     text-transform: uppercase;
     position: relative;
     z-index: 2;
     transition: transform 1s ease;
 
+    @include rule(padding-right, (sm: 14vw));
+
     #{$b}__main.is-last & {
       span {
-        transform: translate3d(0, 10vw, 0);
+        @include rule(transform, (xl: translate3d(0, 10vw, 0), sm: none));
       }
     }
 
@@ -154,8 +162,8 @@
   }
 
   &__description {
-    font-size: (28/1440) *100vw;
-    line-height: (48/28);
+    @include rule(font-size, (xl: (28/1440) *100vw, sm: (11/320)*100vw));
+    @include rule(line-height, (xl: (48/28), sm: 1.9));
     opacity: 0;
     transition: opacity $ease-long 1s;
     position: relative;
@@ -170,7 +178,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: (47/1440) *100vw;
+      @include rule(margin-top, (xl: (47/1440) *100vw, sm: 4vw));
     }
   }
 
@@ -209,7 +217,8 @@
   }
 
   &__year {
-    font-size: (13/1440) *100vw;
+    @include rule(font-size, (xl: (13/1440) *100vw, sm: (8/320)*100vw));
+
     line-height: (16/13);
     opacity: 0;
     transition: opacity $ease-long 1s;
@@ -232,8 +241,9 @@
   // Screen
 
   &__screen {
+    @include rule(min-height, (xl: 100vh, sm: 70vh));
+
     width: 100%;
-    min-height: 100vh;
     box-sizing: border-box;
     padding: 10vw;
     display: flex;
@@ -244,8 +254,10 @@
       padding: 0;
       align-items: initial;
 
+      @include rule(display, (sm: block));
+
       #{$b}__screen {
-        width: 50%;
+        @include rule(width, (xl: 50%, sm: 100%));
       }
     }
 
@@ -254,7 +266,7 @@
     }
 
     &_video {
-      height: 100vh;
+      @include rule(height, (xl: 100vh, sm: 70vh));
     }
   }
 
@@ -270,10 +282,6 @@
     video {
       width: 100%;
       height: 100%;
-
-      @media (min-width: 2500px) {
-        max-width: none !important;
-      }
     }
   }
 
@@ -325,11 +333,44 @@
     width: 100%;
     position: relative;
     z-index: 1;
+
+    &_centered {
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid;
+        opacity: .5;
+        transition: opacity $ease-main;
+      }
+
+      &:hover::after {
+        opacity: 0;
+      }
+    }
   }
 
   &__case-title {
-    font-size: (38/1440) *100vw;
-    line-height: (48/38);
+    @include rule(font-size, (xl: (38/1440) *100vw, sm: 5.86667vw));
+    @include rule(line-height, (xl: (48/38), sm: 1.45455));
+
+    transition: transform $ease-long, opacity $ease-long;
+    opacity: 0;
+    transform: translate3d(0, (30/1440)*100vw, 0);
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
 
     span {
       display: block;
@@ -337,11 +378,20 @@
   }
 
   &__case-text {
-    font-size: (18/1440) *100vw;
-    line-height: (28/18);
+    @include rule(font-size, (xl: (18/1440) *100vw, sm: 3.4375vw));
+    @include rule(line-height, (xl: (28/18), sm: 1.9));
+
+    transition: transform $ease-long, opacity $ease-long;
+    opacity: 0;
+    transform: translate3d(0, (30/1440)*100vw, 0);
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
 
     &:not(:first-child) {
-      margin-top: (29/1440) *100vw;
+      @include rule(margin-top, (xl: (29/1440) *100vw, sm: 4vw));
     }
   }
 
@@ -356,6 +406,13 @@
     transition: opacity $ease-long;
     font-size: 0;
     pointer-events: none;
+
+    @include screen('sm') {
+      width: 8.2vw;
+      left: auto;
+      right: 10vw;
+      top: 10vw;
+    }
 
     svg {
       width: 100%;
