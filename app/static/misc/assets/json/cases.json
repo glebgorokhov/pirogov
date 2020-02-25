@@ -231,6 +231,7 @@
           {
             "type": "texts",
             "backgroundColor": "white",
+            "class": "case__screen_hide-mobile",
             "content": {
               "title": "",
               "text": ""
