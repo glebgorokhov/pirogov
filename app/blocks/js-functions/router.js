@@ -96,27 +96,29 @@ export function router() {
   }
 
   const areVideosLoaded = new Promise(function (resolve, reject) {
+    let loadedVideosAmount = 0;
+
     const interval = setInterval(function () {
       const
         videos = $(document).find('.js-slide-video'),
         videoLength = videos.length;
 
-      let loadedVideosAmount = 0;
-
       videos.each(function () {
         const el = $(this);
 
-        el.on('canplaythrough playing', function () {
-          if (!el.hasClass('is-playing')) el.addClass('is-playing');
-          loadedVideosAmount += 1;
-          console.log('Slider: Video loaded');
+        el.on('canplaythrough', function () {
+          if (!el.hasClass('is-playing')) {
+            el.addClass('is-playing');
+            loadedVideosAmount += 1;
+            console.log('Slider: Video loaded');
+          }
         });
 
-        if (el[0].readyState > 3) {
-          if (!el.hasClass('is-playing')) el.addClass('is-playing');
-          loadedVideosAmount += 1;
-          console.log('Slider: Video from cache');
-        }
+        // if (el[0].readyState > 3) {
+        //   if (!el.hasClass('is-playing')) el.addClass('is-playing');
+        //   loadedVideosAmount += 1;
+        //   console.log('Slider: Video from cache');
+        // }
       });
 
       if (videoLength === loadedVideosAmount && videoLength > 0) {

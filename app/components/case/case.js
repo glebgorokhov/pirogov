@@ -175,9 +175,9 @@ function videoLoader () {
       block.removeClass('is-loading');
     });
 
-    if (video.readyState > 3) {
-      block.removeClass('is-loading');
-    }
+    // if (video.readyState > 3) {
+    //   block.removeClass('is-loading');
+    // }
   });
 }
 
