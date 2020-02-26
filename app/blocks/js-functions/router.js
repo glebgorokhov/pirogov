@@ -15,13 +15,13 @@ const
   preloader = $('.js-preloader');
 
 // Показать/скрыть страницу 404
-function page404Toggle (hide) {
+function page404Toggle(hide) {
   hide ? $(document).find('.page-404').removeClass('is-visible') : $(document).find('.page-404').addClass('is-visible');
   hide ? $('.js-page-404').removeClass('is-visible') : $('.js-page-404').addClass('is-visible');
 }
 
 // Смена активного контейнера (при переключении страниц)
-function changeContainer (selector, delayOne, delayTwo) {
+function changeContainer(selector, delayOne, delayTwo) {
   console.log(isMainPage, isPageChanged);
 
   setTimeout(() => {
@@ -71,7 +71,7 @@ function changeContainer (selector, delayOne, delayTwo) {
 }
 
 // Анимация лого в контактах
-function contactsLogo (backwards) {
+function contactsLogo(backwards) {
   if (!backwards) {
     window.logoAnimation.setDirection(-1);
     window.logoAnimation.play();
@@ -87,7 +87,7 @@ function contactsLogo (backwards) {
   }, 1200);
 }
 
-export function router () {
+export function router() {
   console.log('Страница главная: ' + isMainPage);
 
   if (!isMainPage) {
@@ -95,11 +95,44 @@ export function router () {
     logoContainer.addClass('is-clickable');
   }
 
+  const areVideosLoaded = new Promise(function (resolve, reject) {
+    const interval = setInterval(function () {
+      const
+        videos = $(document).find('.js-slide-video'),
+        videoLength = videos.length;
+
+      let loadedVideosAmount = 0;
+
+      videos.each(function () {
+        const el = $(this);
+
+        el.on('canplaythrough playing', function () {
+          if (!el.hasClass('is-playing')) el.addClass('is-playing');
+          loadedVideosAmount += 1;
+          console.log('Slider: Video loaded');
+        });
+
+        if (el[0].readyState > 3) {
+          if (!el.hasClass('is-playing')) el.addClass('is-playing');
+          loadedVideosAmount += 1;
+          console.log('Slider: Video from cache');
+        }
+      });
+
+      if (videoLength === loadedVideosAmount && videoLength > 0) {
+        resolve();
+        clearInterval(interval);
+      }
+    }, 100);
+  });
+
   // Прелодер
   page('/', function () {
     console.log('Главная');
     window.logoAnimation.play();
     isPageChanged = true;
+
+    let timeStart = new Date();
 
     setTimeout(() => {
       preloader.addClass('is-visible');
@@ -113,20 +146,31 @@ export function router () {
     //   window.logoAnimation.pause();
     // }, 5000);
 
-    setTimeout(() => {
-      preloader.addClass('is-loaded');
-    }, 8000);
+    areVideosLoaded.then(function () {
+      let timeEnd = new Date();
+      let timeDiff = timeEnd - timeStart;
 
-    setTimeout(() => {
-      window.mySlider.slideTo(0);
-      window.logoAnimation.play();
-    }, 8500);
+      console.log(`Время загрузки: ${timeDiff}ms`);
 
-    setTimeout(() => {
-      preloader.hide();
-      logoContainer.addClass('is-clickable');
-      page('/cases/');
-    }, 9700);
+      setTimeout(() => {
+        $(document).find('.preloader__title_copy').addClass('is-preloaded');
+      }, timeDiff < 8000 ? 8000 - timeDiff - 2000 : timeDiff - 2000);
+
+      setTimeout(() => {
+        preloader.addClass('is-loaded');
+      }, timeDiff < 8000 ? 8000 - timeDiff : timeDiff);
+
+      setTimeout(() => {
+        window.mySlider.slideTo(0);
+        window.logoAnimation.play();
+      }, timeDiff < 8000 ? 8500 - timeDiff : timeDiff + 500);
+
+      setTimeout(() => {
+        preloader.hide();
+        logoContainer.addClass('is-clickable');
+        page('/cases/');
+      }, timeDiff < 8000 ? 9700 - timeDiff : timeDiff + 1700);
+    });
   });
 
   // Кейсы
@@ -139,7 +183,7 @@ export function router () {
 
   // Кейс
 
-  function logicCase () {
+  function logicCase() {
     page('/cases/:case/', function (e) {
       if (window.casesNames[e.params.case]) {
         loadCase(window.casesNamesSimple.indexOf(e.params.case));
@@ -155,10 +199,11 @@ export function router () {
       next();
     });
   }
+
   logicCase();
 
   // Контакты
-  function logicContacts () {
+  function logicContacts() {
     page('/contacts/', function (e) {
       contactsLogo();
       changeContainer('.js-page-contacts');
@@ -173,6 +218,7 @@ export function router () {
       next();
     });
   }
+
   logicContacts();
 
   // 404
@@ -197,4 +243,5 @@ export function router () {
     e.stopPropagation();
   });
 }
+
 /* eslint-enable */

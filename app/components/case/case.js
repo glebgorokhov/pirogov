@@ -48,8 +48,9 @@ function generateMainScreen (data) {
 
 function generateVideoScreen (data) {
   const html = `
-     <div class="case__video">
+     <div class="case__video is-loading">
        <video src="${data.video}" style="${data.videoWidth ? 'max-width: ' + data.videoWidth + 'px;' : ''}" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto"></video>
+       <div class="case__video-preloader"><span></span></div>
      </div>
   `;
 
@@ -164,6 +165,22 @@ function posDifference (id, action) {
   }, 1000);
 }
 
+function videoLoader () {
+  $(document).find('.case__video.is-loading').each(function () {
+    const
+      block = $(this),
+      video = block.find('video');
+
+    video.on('canplaythrough playing', function () {
+      block.removeClass('is-loading');
+    });
+
+    if (video.readyState > 3) {
+      block.removeClass('is-loading');
+    }
+  });
+}
+
 // ########################################
 // ########################################
 
@@ -210,6 +227,7 @@ export function loadCase (caseID) {
     }
 
     addLastSection();
+    videoLoader();
     posDifference(caseID);
   });
 }
@@ -292,6 +310,7 @@ export function cases () {
           }
 
           addLastSection();
+          videoLoader();
 
           setTimeout(() => {
             $('.case').addClass('is-loading');
