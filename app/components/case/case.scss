@@ -291,7 +291,7 @@
 
     &.is-loading {
       video {
-        opacity: .3;
+        opacity: 0;
       }
     }
 
@@ -309,7 +309,7 @@
 
       @keyframes loading {
         0% { transform: scale3d(0, 1, 1); }
-        100% { transform: scale3d(1, 1, 1); }
+        100% { transform: scale3d(.95, 1, 1); }
       }
 
       #{$b}__video.is-loading & {
@@ -317,7 +317,7 @@
         transform: translate3d(0, 0, 0);
 
         span {
-          animation: loading 10s ease;
+          animation: loading 20s ease;
           animation-fill-mode: forwards;
           transform-origin: left;
         }
