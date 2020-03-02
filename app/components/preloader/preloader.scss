@@ -56,8 +56,8 @@
       color: white;
 
       #{$b}.is-loading & {
-        width: 100%;
-        transition: width 60s ease;
+        width: 90%;
+        transition: width 40s ease;
       }
 
       span {
