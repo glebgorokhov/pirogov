@@ -155,23 +155,30 @@ export function router() {
       console.log(`Время загрузки: ${timeDiff}ms`);
 
       setTimeout(() => {
-        $(document).find('.preloader__title_copy').addClass('is-preloaded');
-      }, timeDiff < 8000 ? 8000 - timeDiff - 2000 : timeDiff - 2000);
+        // $(document).find('.preloader__title_copy').addClass('is-preloaded');
+        $(document).find('.preloader__title_copy')
+          .width($(document).find('.preloader__title_copy').width());
+
+        setTimeout(() => {
+          $(document).find('.preloader__title_copy').css({ transitionDuration: '2s' }).width('100%')
+        }, 1);
+
+      }, timeDiff < 8000 ? 8000 - timeDiff - 2000 : 0);
 
       setTimeout(() => {
         preloader.addClass('is-loaded');
-      }, timeDiff < 8000 ? 8000 - timeDiff : timeDiff);
+      }, timeDiff < 8000 ? 8000 - timeDiff : 2000);
 
       setTimeout(() => {
         window.mySlider.slideTo(0);
         window.logoAnimation.play();
-      }, timeDiff < 8000 ? 8500 - timeDiff : timeDiff + 500);
+      }, timeDiff < 8000 ? 8000 - timeDiff + 500 : 2500);
 
       setTimeout(() => {
         preloader.hide();
         logoContainer.addClass('is-clickable');
         page('/cases/');
-      }, timeDiff < 8000 ? 9700 - timeDiff : timeDiff + 1700);
+      }, timeDiff < 8000 ? 9700 - timeDiff : 3700);
     });
   });
 

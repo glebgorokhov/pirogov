@@ -56,12 +56,8 @@
       color: white;
 
       #{$b}.is-loading & {
-        width: 33%;
-        transition: width 2s ease;
-      }
-
-      &.is-preloaded {
-        width: 100% !important;
+        width: 100%;
+        transition: width 60s ease;
       }
 
       span {
