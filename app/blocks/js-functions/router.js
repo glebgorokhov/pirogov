@@ -56,11 +56,8 @@ function changeContainer(selector, delayOne, delayTwo) {
     setTimeout(() => {
       $(document).find('.case.is-active').removeClass('is-active');
     }, 1000);
-
-    if (!isMainPage && !isPageChanged) window.logoToFirstState();
   } else {
     $('.js-contacts').removeClass('is-visible');
-    if (!isMainPage && !isPageChanged) window.logoToSecondState();
   }
 
   // Переход в кейс
@@ -73,18 +70,10 @@ function changeContainer(selector, delayOne, delayTwo) {
 // Анимация лого в контактах
 function contactsLogo(backwards) {
   if (!backwards) {
-    window.logoAnimation.setDirection(-1);
-    window.logoAnimation.play();
     logoContainer.removeClass('is-clickable');
   } else {
-    window.logoAnimation.setDirection(1);
-    window.logoAnimation.play();
     logoContainer.addClass('is-clickable');
   }
-
-  setTimeout(() => {
-    window.logoAnimation.pause();
-  }, 1200);
 }
 
 export function router() {
@@ -121,7 +110,8 @@ export function router() {
         // }
       });
 
-      if (videoLength === loadedVideosAmount && videoLength > 0) {
+      //if (videoLength === loadedVideosAmount && videoLength > 0) {
+      if (videoLength > 1 && videoLength > 0) {
         resolve();
         clearInterval(interval);
       }
@@ -131,7 +121,6 @@ export function router() {
   // Прелодер
   page('/', function () {
     console.log('Главная');
-    window.logoAnimation.play();
     isPageChanged = true;
 
     let timeStart = new Date();
@@ -156,11 +145,11 @@ export function router() {
 
       setTimeout(() => {
         // $(document).find('.preloader__title_copy').addClass('is-preloaded');
-        $(document).find('.preloader__title_copy')
-          .width($(document).find('.preloader__title_copy').width());
+        $(document).find('.preloader__wrapper')
+          .width($(document).find('.preloader__wrapper').width());
 
         setTimeout(() => {
-          $(document).find('.preloader__title_copy').css({ transitionDuration: '2s' }).width('100%')
+          $(document).find('.preloader__wrapper').css({ transitionDuration: '2s' }).width('100%')
         }, 1);
 
       }, timeDiff < 8000 ? 8000 - timeDiff - 2000 : 0);
@@ -171,12 +160,12 @@ export function router() {
 
       setTimeout(() => {
         window.mySlider.slideTo(0);
-        window.logoAnimation.play();
       }, timeDiff < 8000 ? 8000 - timeDiff + 500 : 2500);
 
       setTimeout(() => {
         preloader.hide();
         logoContainer.addClass('is-clickable');
+        logoContainer.removeClass('is-hidden');
         page('/cases/');
       }, timeDiff < 8000 ? 9700 - timeDiff : 3700);
     });
@@ -188,12 +177,16 @@ export function router() {
     $(document).find('.case').removeClass('is-active');
     $(document).find('.is-case-open').removeClass('is-case-open');
     changeContainer('.js-page-cases');
+    logoContainer.removeClass('is-hidden');
   });
 
   // Кейс
 
   function logicCase() {
     page('/cases/:case/', function (e) {
+      logoContainer.removeClass('is-hidden');
+      logoContainer.addClass('is-case');
+
       if (window.casesNames[e.params.case]) {
         loadCase(window.casesNamesSimple.indexOf(e.params.case));
         changeContainer('.js-page-case', 1000, 1000);
@@ -205,6 +198,7 @@ export function router() {
 
     page.exit('/cases/:case/', function (e, next) {
       console.log(`Уход с кейса ${e.params.case}`);
+      logoContainer.removeClass('is-case');
       next();
     });
   }
@@ -217,10 +211,24 @@ export function router() {
       contactsLogo();
       changeContainer('.js-page-contacts');
       $('.case').addClass('is-preloaded');
+      logoContainer.addClass('is-hidden');
+      setTimeout(() => {
+        $(document).find('.contacts__video')[0].play();
+      }, 500);
     });
 
     page.exit('/contacts/', function (e, next) {
       contactsLogo(true);
+      logoContainer.removeClass('is-hidden');
+
+      setTimeout(() => {
+        const video = $(document).find('.contacts__video')[0];
+
+        video.pause();
+        video.currentTime = 0;
+        video.load();
+      }, 1000);
+
       setTimeout(() => {
         $('.case').removeClass('is-preloaded');
       }, 3000);

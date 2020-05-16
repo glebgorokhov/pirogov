@@ -15,6 +15,10 @@ export function contactsLayout () {
 
       container.append(html);
     });
+
+    container.append(`
+      <video src="/assets/videos/Desktop-contacts.mp4" class="contacts__video" preload="auto" muted ></video>
+    `);
   });
 }
 /* eslint-enable */

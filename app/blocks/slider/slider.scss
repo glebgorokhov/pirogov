@@ -69,10 +69,11 @@
     line-height: (92/72);
     letter-spacing: .1em;
     text-transform: uppercase;
-    display: flex;
+    // display: flex;
     flex-direction: column;
     align-items: flex-start;
     cursor: pointer;
+    display: none;
 
     @include screen('sm') {
       font-size: (22/375) *100vw;

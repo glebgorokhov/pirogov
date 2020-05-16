@@ -54,8 +54,8 @@
   &__line {
     position: fixed;
     bottom: (70/900) *100vh;
-    right: (70/1440) *100vw;
-    width: 2px;
+    right: 5vw;
+    width: 4px;
     height: (140/900) *100vh;
     overflow: hidden;
     transition: transform $ease-long, opacity $ease-long;
@@ -72,7 +72,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      background: $color-main;
+      background: white;
       animation: line 1.6s ease infinite;
       transform-origin: top;
     }
@@ -80,7 +80,7 @@
 
   &__back {
     position: fixed;
-    width: (60/1440) *100vw;
+    width: (40/1440) *100vw;
     left: (44/1440) *100vw;
     top: (68/900) *100vh;
     cursor: pointer;
@@ -122,14 +122,13 @@
   }
 
   &__title {
-    @include rule(font-size, (xl: (72/1440) *100vw, sm: 5.86667vw));
-    @include rule(line-height, (xl: (92/72), sm: 1.45455));
+    @include rule(font-size, (xl: (60/1440)*100vw, sm: 5.86667vw));
+    @include rule(line-height, (xl: (70/60), sm: 1.45455));
 
-    letter-spacing: .1em;
-    text-transform: uppercase;
     position: relative;
     z-index: 2;
-    transition: transform 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
 
     @include rule(padding-right, (sm: 14vw));
 
@@ -156,14 +155,18 @@
       }
     }
 
+    .main__page_case.is-visible #{$b} & {
+      opacity: 1;
+    }
+
     .main__page_case.is-visible #{$b}.is-preloaded & {
       opacity: 1;
     }
   }
 
   &__description {
-    @include rule(font-size, (xl: (28/1440) *100vw, sm: (11/320)*100vw));
-    @include rule(line-height, (xl: (48/28), sm: 1.9));
+    @include rule(font-size, (xl: (24/1440) *100vw, sm: (11/320)*100vw));
+    @include rule(line-height, (xl: (34/24), sm: 1.9));
     opacity: 0;
     transition: opacity $ease-long 1s;
     position: relative;
@@ -330,6 +333,31 @@
         background: white;
       }
     }
+
+    &-background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+
+      video {
+        height: 100%;
+        width: 177.77777778vh;
+        min-width: 100%;
+        min-height: 56.25vw;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        background-size: cover;
+        background-position: 50%;
+        will-change: transform;
+      }
+    }
   }
 
   &__picture {
@@ -444,7 +472,7 @@
 
   &__case-loader {
     position: fixed;
-    width: (60/1440) *100vw;
+    width: (40/1440) *100vw;
     left: (44/1440) *100vw;
     top: (68/900) *100vh;
     cursor: pointer;
@@ -466,13 +494,13 @@
       position: absolute;
       stroke-linecap: round;
       fill: none;
-      stroke: red;
+      stroke: white;
       transform: rotate(-90deg);
 
       circle {
-        stroke-dasharray: 180px;
-        stroke-dashoffset: -180px;
-        stroke: red;
+        stroke-dasharray: 119px;
+        stroke-dashoffset: -119px;
+        stroke: white;
         transition: stroke-dashoffset 5s ease;
       }
     }

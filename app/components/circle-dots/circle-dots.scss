@@ -21,17 +21,19 @@
 
   &.swiper-pagination-bullets {
     position: absolute;
-    bottom: 5vw;
-    right: 5vw;
+    left: 5vw;
     box-sizing: border-box;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 30px;
-    left: auto;
+    bottom: 0;
+    top: 0;
 
     @include screen('sm') {
+      top: auto;
       bottom: 10vw;
       right: 10vw;
       left: 10vw;
@@ -59,18 +61,18 @@
     position: relative;
     width: 8px;
     height: 8px;
-    transition: width $ease-main, height $ease-main, box-shadow $ease-main, opacity $ease-main;
+    transition: width $ease-main, height $ease-main, box-shadow $ease-main, background $ease-main, opacity $ease-main;
     cursor: pointer;
-    box-shadow: 0 0 0 1px rgba($color-main, 1) inset;
+    background: white;
     border-radius: 50%;
     transform: rotate(-90deg);
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 16px;
 
       @include screen('sm') {
         margin-top: 0;
-        margin-left: 16px;
+        margin-left: 12px;
       }
     }
 
@@ -83,12 +85,12 @@
       stroke-width: 1px;
       stroke-linecap: round;
       fill: none;
-      stroke: $color-main;
+      stroke: white;
 
       circle {
-        stroke-dasharray: 95px;
+        stroke-dasharray: 75px;
         stroke-dashoffset: 0;
-        stroke: $color-main;
+        stroke: white;
       }
     }
 
@@ -99,27 +101,20 @@
       }
 
       &:hover {
-        opacity: .5;
+        @include screen(lg, min) {
+          background: red;
+        }
       }
     }
 
     &.is-active {
-      width: 32px;
-      height: 32px;
-      box-shadow: 0 0 0 1px rgba($color-main, 0) inset;
-
-      @include screen('sm') {
-        width: 16px;
-        height: 16px;
-      }
+      width: 26px;
+      height: 26px;
+      background: transparent;
 
       svg circle {
-        stroke-dashoffset: 95px;
+        stroke-dashoffset: 75px;
         transition: stroke-dashoffset 5s linear;
-
-        @include screen('sm') {
-          stroke-width: 2px;
-        }
       }
     }
   }

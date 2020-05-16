@@ -2,11 +2,14 @@ mixin preloader()
   +b.preloader.js-preloader&attributes(attributes)
     .container
       +e.titles
-        each item in ["", "_copy"]
-          +e.title(class=item)
-            span ART DIRECTION
-            span PRODUCT DESIGN
-            span CREATIVE
+        +e.title(class=item)
+          span Product design
+          span & creative
+
+        +e.wrapper
+          +e.title(class="_copy")
+            span Product design
+            span & creative
 
 mixin ui-kit-preloader()
   +ui-section

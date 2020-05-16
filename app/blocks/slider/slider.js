@@ -87,8 +87,8 @@ export function slider() {
 
               return `
                 <div class="${className}">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <circle class="js-circle-dot-percent" cx="16" cy="16" r="15" style="transition: stroke-dashoffset ${video.duration*1000 + 500}ms linear;"></circle>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+                        <circle class="js-circle-dot-percent" cx="13" cy="13" r="12" style="transition: stroke-dashoffset ${video.duration*1000 + 500}ms linear;"></circle>
                     </svg>
                     <div class="circle-dots__clickable"></div>
                 </div>

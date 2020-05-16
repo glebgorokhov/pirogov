@@ -326,7 +326,16 @@
         "type": "video",
         "class": "case__screen_video",
         "content": {
-          "video": "/assets/videos/Case-Polza.mp4"
+          "video": "/assets/videos/Case-ATM.mp4"
+        }
+      },
+      {
+        "type": "texts",
+        "class": "",
+        "content": {
+          "backgroundVideo": "/assets/videos/Case-ATM.mp4",
+          "title": "Мобильный трафик — 34%",
+          "text": "Тестовый текст"
         }
       },
       {
@@ -352,6 +361,15 @@
             }
           }
         ]
+      },
+      {
+        "type": "singlePicture",
+        "class": "",
+        "content": {
+          "backgroundVideo": "/assets/videos/Case-ATM.mp4",
+          "image": "/assets/images/cases/Polza/01@2x.png",
+          "imageWidth": "832"
+        }
       },
       {
         "type": "singlePicture",

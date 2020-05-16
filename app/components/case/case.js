@@ -35,11 +35,13 @@ function generateMainScreen (data) {
             <p class="case__year">${data.year}</p>
         </div>
         
+        <!-- 
         <div class="case__main-video">
             <div class="case__main-video-wrapper">
               <video class="js-case-main-video" src="${data.video}" muted="muted" playsinline="playsinline" preload="auto" autoplay="autoplay"></video>
             </div>
         </div>
+        -->
     </div>
   `;
 
@@ -100,6 +102,17 @@ function generateSectionAttributes (data) {
   return attributes;
 }
 
+function generateBackgroundVideo (data) {
+  const html = `
+     <div class="case__video case__video-background is-loading">
+       <video src="${data.backgroundVideo}" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto"></video>
+       <div class="case__video-preloader"><span></span></div>
+     </div>
+  `;
+
+  return html;
+}
+
 function generateSection (type, data, object) {
   let html = ``;
 
@@ -112,10 +125,13 @@ function generateSection (type, data, object) {
         ${type === 'texts' ? generateTextScreen (data) : ''}
         ${type === 'singlePicture' ? generatePicturesScreen (data) : ''}
         ${type === 'doubleSide' ? generateDoubleSection (data) : ''}
+        ${data.backgroundVideo ? generateBackgroundVideo (data) : ''}
         ${data.backgroundImage ? generateScreenBg (data) : ''}
       </div>
     `;
   }
+
+  console.log(data.backgroundVideo);
 
   return html;
 }
@@ -137,16 +153,10 @@ function generateDoubleSection (data) {
 
 function posDifference (id, action) {
   const
-    titleSlide = $(`.slider__title:eq(${id})`),
     titleCase = $(document).find('.case__title:eq(0) span');
 
   const
-    posOne = titleSlide.offset().top,
-    posTwo = titleCase.offset().top,
-    ww = $(window).width(),
-    posOneVW = posOne/ww*100,
-    posTwoVW = posTwo/ww*100,
-    diff = posOneVW-posTwoVW;
+    diff = 10;
 
   titleCase.css({
     transition: 'none',

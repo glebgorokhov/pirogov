@@ -1,12 +1,31 @@
 .lottie {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
-  top: 5vw;
+  top: 50%;
   right: 5vw;
+  transform: translateY(-50%);
   z-index: 999999999999;
   font-size: 0;
   pointer-events: none;
-  transition: opacity $ease-main;
+  transition: opacity $ease-main, top $ease-main, transform $ease-main, right $ease-main;
+  width: 40px;
+  height: 10px;
+
+  &::before, &::after {
+    content: '';
+    height: 0;
+    border-top: 1px solid white;
+    width: 100%;
+    transition: border-color $ease-main;
+  }
+
+  &:hover {
+    &::before, &::after {
+      border-top-color: red;
+    }
+  }
 
   &.is-clickable {
     cursor: pointer;
@@ -21,18 +40,24 @@
     opacity: 0;
   }
 
+  &.is-case {
+    top: 5vw;
+    transform: translateY(0);
+
+    @include screen('sm') {
+      top: 10vw;
+      right: 10vw;
+      transform: translateX(0);
+    }
+  }
+
   $b: &;
 
   @include screen('sm') {
     top: 10vw;
-    right: 10vw;
-  }
-
-  svg {
-    width: (142/1440) *100vw !important;
-
-    @include screen('sm') {
-      width: (100/375) *100vw !important;
-    }
+    right: 50%;
+    bottom: auto;
+    left: auto;
+    transform: translateX(50%);
   }
 }
