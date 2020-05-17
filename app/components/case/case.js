@@ -191,6 +191,12 @@ function videoLoader () {
   });
 }
 
+function mainScreenHeight() {
+  $(document).find('.case__main').css({
+    minHeight: $(document).find('.main__page_case').outerHeight() + 'px',
+  });
+}
+
 // ########################################
 // ########################################
 
@@ -239,10 +245,13 @@ export function loadCase (caseID) {
     addLastSection();
     videoLoader();
     posDifference(caseID);
+    mainScreenHeight();
   });
 }
 
 export function cases () {
+  $(window).resize(mainScreenHeight);
+
   $('.main__page_case').scroll(function () {
     const
       w = $(this),

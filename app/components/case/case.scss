@@ -53,14 +53,13 @@
 
   &__line {
     position: fixed;
-    bottom: (70/900) *100vh;
-    right: 5vw;
-    width: 4px;
+    width: 1px;
     height: (140/900) *100vh;
     overflow: hidden;
     transition: transform $ease-long, opacity $ease-long;
 
-    @include rule(display, (sm: none));
+    @include rule(right, (xl: 5vw, sm: 10vw));
+    @include rule(bottom, (xl: (70/900) *100vh, sm: 10vw));
 
     &.is-hidden, #{$b}.is-loading & {
       transform: translate3d(0, 2vw, 0);
@@ -221,6 +220,7 @@
 
   &__year {
     @include rule(font-size, (xl: (13/1440) *100vw, sm: (8/320)*100vw));
+    @include rule(padding-right, (sm: 10vw));
 
     line-height: (16/13);
     opacity: 0;

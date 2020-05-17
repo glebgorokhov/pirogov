@@ -9,7 +9,7 @@
   z-index: 999999999999;
   font-size: 0;
   pointer-events: none;
-  transition: opacity $ease-main, top $ease-main, transform $ease-main, right $ease-main;
+  transition: opacity .5s ease;
   width: 40px;
   height: 10px;
 
@@ -21,23 +21,18 @@
     transition: border-color $ease-main;
   }
 
-  &:hover {
-    &::before, &::after {
-      border-top-color: red;
-    }
-  }
-
   &.is-clickable {
     cursor: pointer;
     pointer-events: all;
 
     &:hover {
-      opacity: .85;
+      opacity: .5;
     }
   }
 
   &.is-hidden {
     opacity: 0;
+    pointer-events: none;
   }
 
   &.is-case {
@@ -59,5 +54,13 @@
     bottom: auto;
     left: auto;
     transform: translateX(50%);
+  }
+
+  &.is-fade-out {
+    opacity: 0;
+  }
+
+  &.is-fade-in {
+    opacity: 1;
   }
 }

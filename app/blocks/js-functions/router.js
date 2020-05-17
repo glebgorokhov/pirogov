@@ -185,7 +185,11 @@ export function router() {
   function logicCase() {
     page('/cases/:case/', function (e) {
       logoContainer.removeClass('is-hidden');
-      logoContainer.addClass('is-case');
+
+      logoContainer.addClass('is-fade-out');
+      setTimeout(() => {
+        logoContainer.addClass('is-case').removeClass('is-fade-out');
+      }, 2000);
 
       if (window.casesNames[e.params.case]) {
         loadCase(window.casesNamesSimple.indexOf(e.params.case));
@@ -198,7 +202,10 @@ export function router() {
 
     page.exit('/cases/:case/', function (e, next) {
       console.log(`Уход с кейса ${e.params.case}`);
-      logoContainer.removeClass('is-case');
+      logoContainer.addClass('is-fade-out');
+      setTimeout(() => {
+        logoContainer.removeClass('is-case').removeClass('is-fade-out');
+      }, 500);
       next();
     });
   }

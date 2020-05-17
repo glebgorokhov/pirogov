@@ -35,8 +35,9 @@
     }
 
     #{$b}.is-visible .swiper-slide-active & {
-      opacity: .4;
+      opacity: 1;
       transition-delay: .7s;
+      cursor: pointer;
 
       @include screen('sm') {
         opacity: 1;
